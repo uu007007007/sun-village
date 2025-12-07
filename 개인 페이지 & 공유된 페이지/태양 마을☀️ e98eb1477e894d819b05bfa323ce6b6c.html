@@ -1,0 +1,716 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>태양 마을☀️</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e98eb147-7e89-4d81-9b05-bfa323ce6b6c" class="page sans"><header><img class="page-cover-image" src="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%25E3%2585%25A1%25E3%2585%259C%25E3%2585%259C%25E3%2585%259C.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🏠</span></div><h1 class="page-title" dir="auto">태양 마을☀️</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="1f873b01-3b41-801b-aa30-c2931fd11c38"><div class="source"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%ED%83%9C%EC%96%91_%EB%A7%88%EC%9D%84.mp4">attachment:684f8602-4f32-4e53-aed4-a3d980d87aba:태양_마을.mp4</a></div></figure></div><div style="display:contents" dir="ltr"><figure id="1f873b01-3b41-8069-90f8-c87755049cd0"><div class="source"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%ED%83%9C%EC%96%91%EB%A7%88%EC%9D%84_%EB%A7%88%EC%9D%84_%EB%B0%9C%ED%91%9C_%EC%9E%90%EB%A3%8C.pdf">attachment:1485a404-6cc5-40b6-b37c-08f60f4cb1c9:태양마을_마을_발표_자료.pdf</a></div></figure></div><div style="display:contents" dir="auto"><div id="882bd930-9ace-4f13-9183-f371ba35f230" class="column-list"><div style="display:contents" dir="auto"><div id="e6dbdc34-d50c-4843-9fa9-0f1280e5fd1c" style="width:50%" class="column"><div style="display:contents" dir="auto"><h1 id="c88b7288-7e2f-4f98-87fd-98a288a133e7" class="">✝️ 마을 운영 Key Words</h1></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d0bc31ef-ac11-4e18-a453-a398b320f9d5"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%"><strong>위로</strong> - 마을안에서 위로를 받고 마음의 안식처가 되었으면 좋겠다.<div style="display:contents" dir="auto"><p id="1fafee09-950e-48a7-a89e-e0fa15ea474d" class=""><strong>성숙</strong> - 한 해동안 마을 안에서 지내며 신앙적으로도 함께 성숙해 질 수 있는 마을이 되었으면 좋겠다.</p></div><div style="display:contents" dir="auto"><p id="606702f5-e6a9-4021-a3a3-ee531b6ff6e7" class=""><strong>사랑</strong> - 우리 마을 안에서는 항상 서로 사랑하고, 아껴주는 관계가 형성되면 좋겠다.</p></div><div style="display:contents" dir="auto"><p id="262a9a69-75ca-452e-935a-a23985a8cfac" class=""><strong>재미</strong> - 무엇보다도 이 관계가 부담스럽지 않고, 마을 사람들과 함께하는 모든 시간이 편안하고 즐거운 시간이면 좋겠다.</p></div></div></figure></div></div></div><div style="display:contents" dir="auto"><div id="4607a5e6-bfdc-48cb-b63a-98055468f6e1" style="width:50%" class="column"><div style="display:contents" dir="auto"><h1 id="427f73c1-bbc2-4b77-96b4-55efd4f695ff" class="">✝️ 마을 챙기기</h1></div><div style="display:contents" dir="auto"><ul id="35bbcea9-b207-4aad-b41f-5bf4b65408af" class="bulleted-list"><li style="list-style-type:disc">기도제목을 항상 기록하고, 파일로 모두 모아서 정리하기</li></ul></div><div style="display:contents" dir="auto"><ul id="03cd32a1-53c0-4f3f-9e01-7d5a1986b657" class="bulleted-list"><li style="list-style-type:disc">마을원들 모두와 1:1 만남 가지기</li></ul></div><div style="display:contents" dir="auto"><ul id="4500ccbe-896f-43d4-96ef-ac636384e99f" class="bulleted-list"><li style="list-style-type:disc">매일 묵상을 진행하여 마을 사람들에게 공유하기</li></ul></div><div style="display:contents" dir="auto"><ul id="0a68859e-f2b7-4bbe-81db-b69537d79086" class="bulleted-list"><li style="list-style-type:disc">기도와 묵상으로 예배와 마을모임 미리 준비하기</li></ul></div><div style="display:contents" dir="auto"><ul id="3be94679-cd83-48fa-bc5e-d4e5796f5cec" class="bulleted-list"><li style="list-style-type:disc">마을원들이 마을모임이나 예배, 교회등과 관련하여 자유롭게 의견을 제시하고, 궁금한 것들을 물어볼 수 있게 미리 준비하고, 편안한 분위기를 만들기</li></ul></div><div style="display:contents" dir="auto"><ul id="bd697b5b-ef9b-4573-aa6a-b46bdf237c49" class="bulleted-list"><li style="list-style-type:disc">예배가 끝나면 바로 마을원들 챙기기</li></ul></div><div style="display:contents" dir="auto"><ul id="37885ab4-e397-4e2a-b340-1c5e622c6d3f" class="bulleted-list"><li style="list-style-type:disc">주보를 미리미리 공유하고, 광고 내용에 대해서 꼭 설명해주기</li></ul></div></div></div></div></div><div style="display:contents" dir="auto"><hr id="0edeb01c-0fc7-4f6e-94e4-0c677a6041ea"/></div><div style="display:contents" dir="auto"><h1 id="a7ab18b4-ea56-45c8-9922-0e6b3fe52a40" class="">✝️ 마을원 역할 분배</h1></div><div style="display:contents" dir="auto"><ul id="85b18ea5-c65b-4999-9e94-b62b09dc399b" class="bulleted-list"><li style="list-style-type:disc"><strong>리더</strong> - 마을원들이 자유롭게 의견을 제시하고, 생각할 수 있는 환경 조성 / 마을원 간의 관계 유지 / 마을 모임 주도 / 마을원들의 컨디션 파악(심리 상태, 출석, 특이 사항) / 묵상 리딩 : <mark class="highlight-red"><strong>태양</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="c1b4a9f0-48c8-437a-ac2f-e6ad20b1a297" class="bulleted-list"><li style="list-style-type:disc"><strong>헬퍼</strong> - 주도적으로 묵상을 진행 , 마을 분위기를 함께 조성, 리더가 부재일 시 마을원들 챙기기 : <mark class="highlight-teal"><strong>서진</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="4ba1f28e-2c1a-4abd-a250-4c196f279867" class="bulleted-list"><li style="list-style-type:disc"><strong>photographer </strong>- 마을 모임, 아웃팅 사진 찍어서 단톡방에 올리기 : <mark class="highlight-pink"><strong>예림</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="b9048a3f-3f67-40c2-82f3-4334828bb4a0" class="bulleted-list"><li style="list-style-type:disc"><strong>생일 지킴이 </strong>- 마을원들 생일이 있을 때마다 축하멘트를 올려주고, (조각)케이크 준비해주기 : <mark class="highlight-brown"><strong>민지</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="63ee301f-dafc-4a0d-91a3-4bc1a74955b3" class="bulleted-list"><li style="list-style-type:disc"><strong>먹 GPT </strong>- 아웃팅에서 다같이 식사를 하는 경우 메뉴 선정 담당 : <mark class="highlight-yellow"><strong>민재</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="4d5449b7-d6ab-41d4-8a3e-3420b0edfeda" class="bulleted-list"><li style="list-style-type:disc"><strong>타임키퍼 </strong>- 항상 예배 일찍 도착하여 마을원들을 기다리고, 예배 30분 전에 단톡에 공지하기 : <mark class="highlight-purple"><strong>지영</strong></mark><mark class="highlight-default"><strong>,</strong></mark><mark class="highlight-purple"><strong> </strong></mark><mark class="highlight-orange"><strong>주원</strong></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="2700c0f2-c20b-4ad0-bc8a-1426a697c740" class="bulleted-list"><li style="list-style-type:disc"><strong>팔로워 </strong>- 마을 리더와 헬퍼를 잘 따라주고, 협조하며 마을원들과 친밀한 관계 유지 : <mark class="highlight-blue"><strong>건범</strong></mark><mark class="highlight-default">,</mark><mark class="highlight-blue"><strong> </strong></mark><mark class="highlight-gray"><strong>호영</strong></mark></li></ul></div><div style="display:contents" dir="auto"><hr id="519f1d3a-d92e-4fb5-8a45-d26b220cf62a"/></div><div style="display:contents" dir="auto"><h1 id="814b625a-c183-4f1a-8692-03e19f7cfdca" class="">✝️ Bucket List</h1></div><div style="display:contents" dir="auto"><ol type="1" id="0d2abcc7-e991-42be-9dfb-2a806fbfae91" class="numbered-list" start="1"><li>예배가 시작하기 15분 전에 와서 예배를 준비하기 ✅</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="a0e370c7-c11e-4ef2-aee9-141dc4d5fd81" class="numbered-list" start="2"><li>매 모임마다 단체 사진 남기기 ✅</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="ff91253d-a8c9-4c73-827b-6ed7512b2fa8" class="numbered-list" start="3"><li>일찍와서 항상 다같이 앉기 - 가까워지기 ✅</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="be04d028-6a9f-4cba-ace8-7ec88d525524" class="numbered-list" start="4"><li>마을원 모두의 생일 챙기기 ✅</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="94473aa9-f219-468a-b1ca-fbaa4ded6155" class="numbered-list" start="5"><li>교회 행사 모두 다같이 빠지지 않고 참여하기(수련회, 운동회, 봉사, 2부 순서 등)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="27673123-dc26-4e77-b0e4-9f3384d2e9bd" class="numbered-list" start="6"><li>묵상하는 습관만들기 (일주일에 한번이라도 꾸준히) ✅</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3a2b0d37-7e4a-4b2e-a8f9-3e9238d502ed" class="numbered-list" start="7"><li>예배 이후에 시간이 되는 사람들은 같이 밥한끼 먹기 ✅</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="d90a0b25-7b13-4210-885b-7986f53b1f43" class="numbered-list" start="8"><li>성경책 가져오기</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="878fc483-b430-4ea0-ab55-23982f900369" class="numbered-list" start="9"><li><del>한달에 한번</del> 단체 사진찍기 (한명도 빠짐없이)</li></ol></div><div style="display:contents" dir="auto"><h3 id="8fc94552-9957-46ed-b5f8-c8c1f8279487" class="">후보군</h3></div><div style="display:contents" dir="auto"><ul id="1779dc2f-e5c3-408e-8187-ca0a321195ea" class="bulleted-list"><li style="list-style-type:disc">플리마켓</li></ul></div><div style="display:contents" dir="auto"><ul id="39c1a49e-ee31-46b1-991a-bf0ed10dd45d" class="bulleted-list"><li style="list-style-type:disc">롤링페이퍼</li></ul></div><div style="display:contents" dir="auto"><ul id="bb01e104-3b43-4277-8e38-605bacc82c40" class="bulleted-list"><li style="list-style-type:disc">질문 보드게임</li></ul></div><div style="display:contents" dir="auto"><ul id="b4cc2dd4-0b7f-4ae2-8957-46e266f54abb" class="bulleted-list"><li style="list-style-type:disc">보드게임카페 가기 ✅</li></ul></div><div style="display:contents" dir="auto"><ul id="57a3380a-a7b1-4cd2-8976-c72b40c66de4" class="bulleted-list"><li style="list-style-type:disc">피크닉 하기 ✅</li></ul></div><div style="display:contents" dir="auto"><hr id="886f3422-e40a-4d5c-9d2d-ca04b70a8f84"/></div><div style="display:contents" dir="ltr"><div id="d4dff6d6-4de6-47be-bad1-9ce168e38a12" class="collection-content"><h4 class="collection-title">마을 모임</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>이름</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>15분 전에 도착하기</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/groups_gray.svg" style="width:14px;height:14px;display:block"/></span>마을 모임 참석 인원</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>밥 같이 먹기</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>사진 찍기</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>성경 챙겨오기</th></tr></thead><tbody><tr id="eff48ee9-032a-4a8f-922e-a4acf85c0ea8"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/01%2007%20eff48ee9032a4a8f922ea4acf85c0ea8.html">01.07</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="daf2d183-3629-4318-9efa-7d3d11ad7fa6"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/01%2014%20daf2d183362943189efa7d3d11ad7fa6.html">01.14</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span><span class="selected-value select-value-color-yellow">호영</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-on"></div></td></tr><tr id="5f821d04-924d-48ae-96b3-e3a3e00387cc"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/01%2021%205f821d04924d48ae96b3e3a3e00387cc.html">01.21</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span><span class="selected-value select-value-color-yellow">호영</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="8d7bf43d-72c4-43e4-9ed6-bbb1a739243a"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/01%2028%208d7bf43d72c443e49ed6bbb1a739243a.html">01.28</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span><span class="selected-value select-value-color-yellow">호영</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-on"></div></td></tr><tr id="2c3b7c00-47e9-45d6-90d6-34f0a134d951"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/02%2004%202c3b7c0047e945d690d634f0a134d951.html">02.04</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-on"></div></td></tr><tr id="0f35b3ac-820a-4c49-a46b-6eafe8a09fc1"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/02%2018%200f35b3ac820a4c49a46b6eafe8a09fc1.html">02.18</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-on"></div></td></tr><tr id="22a00ad3-0e85-4dfb-b0a4-2e9d4cabb6f0"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/02%2025%2022a00ad30e854dfbb0a42e9d4cabb6f0.html">02.25</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-on"></div></td></tr><tr id="d5cf6bfb-ae12-452e-91d4-7100891598a7"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/03%2003%20d5cf6bfbae12452e91d47100891598a7.html">03.03</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-on"></div></td></tr><tr id="b8925567-07c7-4a8f-a9bd-0258e76ba04f"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/03%2010%20b892556707c74a8fa9bd0258e76ba04f.html">03.10</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="1a46fce9-225c-4aba-ad47-eb15c80027be"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/03%2017%201a46fce9225c4abaad47eb15c80027be.html">03.17</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-on"></div></td></tr><tr id="031e89af-320d-4533-b16d-55d5ee577f6d"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/03%2024%20031e89af320d4533b16d55d5ee577f6d.html">03.24</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="b53c31a7-0161-483f-9118-393036b3e50e"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/03%2031%20b53c31a70161483f9118393036b3e50e.html">03.31</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="6d4b60be-1513-415d-a392-71b6e3ac67f7"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/04%2007%206d4b60be1513415da39271b6e3ac67f7.html">04.07</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-gray">지민</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-gray">찬규</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="20dad301-8dda-4ab6-9158-469eb6180cd9"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/04%2014%2020dad3018dda4ab69158469eb6180cd9.html">04.14</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="a1324f01-801f-4e4f-8be3-9a1af66f73c7"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/04%2021%20a1324f01801f4e4f8be39a1af66f73c7.html">04.21</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-gray">지민</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="162b3afd-2b0c-4c04-9dca-7d263f21224a"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/04%2028%20162b3afd2b0c4c049dca7d263f21224a.html">04.28</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="d3f8d865-a4c3-4836-a447-e3848e6fe727"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/05%2005%20d3f8d865a4c34836a447e3848e6fe727.html">05.05</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="3d10d2df-75be-4d4c-a645-b41e7da3e663"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/5%2012%203d10d2df75be4d4ca645b41e7da3e663.html">5.12</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-gray">지민</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="71ddd4d8-913f-4a8f-b28c-7141b854517c"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/5%2019%2071ddd4d8913f4a8fb28c7141b854517c.html">5.19</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="92ca89bf-2e8b-4975-bbda-601c55679348"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/5%2026%2092ca89bf2e8b4975bbda601c55679348.html">5.26</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="9f074577-d3a1-43b1-99ca-d82be98dd19d"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/06%2002%209f074577d3a143b199cad82be98dd19d.html">06.02</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-gray">지민</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="c7ace2a7-1548-4f28-84b7-e364778f30af"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/06%2009%20c7ace2a715484f2884b7e364778f30af.html">06.09</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="32d9af9f-c213-440c-a6bd-288593106147"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/06%2016%2032d9af9fc213440ca6bd288593106147.html">06.16</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-gray">지민</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="66cf0d49-8c41-45a8-8165-acbf271897fe"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/06%2023%2066cf0d498c4145a88165acbf271897fe.html">06.23</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="182d0049-09c0-4aae-b47b-acfbe5af71ff"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/06%2030%20182d004909c04aaeb47bacfbe5af71ff.html">06.30</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-gray">지민</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="2a2ff479-45c3-4403-ad0f-a133026b661d"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/07%2007%202a2ff47945c34403ad0fa133026b661d.html">07.07</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-purple">지영</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="61d4f6f0-86e0-4556-b467-d9dbe8a87373"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/07%2014%2061d4f6f086e04556b467d9dbe8a87373.html">07.14</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="26543e80-2ef3-47e1-8e1b-5bda2cb10c80"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/07%2021%2026543e802ef347e18e1b5bda2cb10c80.html">07.21</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="d8bc9bed-a74a-423a-963a-cc4629049b01"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/07%2028%20d8bc9beda74a423a963acc4629049b01.html">07.28</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="3be06a49-96f1-44bb-b4a6-1e4fd8b69da4"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/08%2004%203be06a4996f144bbb4a61e4fd8b69da4.html">08.04</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-80e3-b9a5-cff570f089ba"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/08%2015~08%2017%20%EC%97%AC%EB%A6%84%20%EC%88%98%EB%A0%A8%ED%9A%8C%2015673b013b4180e3b9a5cff570f089ba.html">08.15~08.17 여름 수련회</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-8075-b73d-c875a41a5c27"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/08%2018%2015673b013b418075b73dc875a41a5c27.html">08.18</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-on"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-80c2-a739-ee4994c36035"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/09%2001%2015673b013b4180c2a739ee4994c36035.html">09.01</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-gray">지민</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-on"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-805a-817e-d5f60c09de07"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/09%2022%2015673b013b41805a817ed5f60c09de07.html">09.22</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-808a-82c9-d1dcd2506977"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/10%2006%2015673b013b41808a82c9d1dcd2506977.html">10.06</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-8079-8e1a-c57231f7d11e"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/10%2013%2015673b013b4180798e1ac57231f7d11e.html">10.13</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-807a-8e77-ee3025338f54"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/10%2020%2015673b013b41807a8e77ee3025338f54.html">10.20</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-8008-9f9e-c8d27741e936"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/10%2027%2015673b013b4180089f9ec8d27741e936.html">10.27</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-80f0-8aa4-de6a8c075b62"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/11%2003%2015673b013b4180f08aa4de6a8c075b62.html">11.03</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-806d-bd37-fb4439f5d7ea"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/11%2010%2015673b013b41806dbd37fb4439f5d7ea.html">11.10</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-80f8-9be5-ce29ec0aef90"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/11%2017%2015673b013b4180f89be5ce29ec0aef90.html">11.17</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-807a-872f-f93d73539656"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/11%2024%2015673b013b41807a872ff93d73539656.html">11.24</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-8063-a665-c616c778fe16"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/12%2001%2015673b013b418063a665c616c778fe16.html">12.01</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15673b01-3b41-8028-8b3c-fd0302a7f043"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/12%2008%2015673b013b4180288b3cfd0302a7f043.html">12.08</a></td><td class="cell-X{bv"><div class="checkbox checkbox-on"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="15d73b01-3b41-80fe-9dd5-c851046f74b2"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/12%2015%2015d73b013b4180fe9dd5c851046f74b2.html">12.15</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr><tr id="16a73b01-3b41-80c9-b914-da333f48b955"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%20%EB%AA%A8%EC%9E%84/12%2022%2016a73b013b4180c9b914da333f48b955.html">12.22</a></td><td class="cell-X{bv"><div class="checkbox checkbox-off"></div></td><td class="cell-MVTA"><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td><td class="cell-sjW?"><div class="checkbox checkbox-off"></div></td><td class="cell-ib]A"><div class="checkbox checkbox-off"></div></td><td class="cell-Mi:r"><div class="checkbox checkbox-off"></div></td></tr></tbody></table><br/><br/></div></div><div style="display:contents" dir="ltr"><div id="c501af2c-d258-4d6a-8180-7d342321cc2e" class="collection-content"><h4 class="collection-title">기도 제목</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>이름</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>날짜</th></tr></thead><tbody><tr id="7695fa92-d1c2-4461-a06f-6f8cbf3c9e7b"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/01%2007%20%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9%207695fa92d1c24461a06f6f8cbf3c9e7b.html">01.07 기도 제목</a></td><td class="cell-^i}o"><time>@2024년 1월 7일</time></td></tr><tr id="fb8aa2f2-475c-4033-8356-04ccad7471e9"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/01%2014%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20fb8aa2f2475c4033835604ccad7471e9.html">01.14 기도제목</a></td><td class="cell-^i}o"><time>@2024년 1월 14일</time></td></tr><tr id="1339d6a0-4b94-4730-aa29-75d01e1654fb"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/01%2021%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%201339d6a04b944730aa2975d01e1654fb.html">01.21 기도제목</a></td><td class="cell-^i}o"><time>@2024년 1월 21일</time></td></tr><tr id="5ab70503-2b45-438d-a47c-d76a351ef20e"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/01%2028%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%205ab705032b45438da47cd76a351ef20e.html">01.28 기도제목</a></td><td class="cell-^i}o"><time>@2024년 1월 28일</time></td></tr><tr id="ce4d2d1d-9a42-4ea3-b7d8-86353438bf08"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/02%2004%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20ce4d2d1d9a424ea3b7d886353438bf08.html">02.04 기도제목</a></td><td class="cell-^i}o"><time>@2024년 2월 4일</time></td></tr><tr id="abad7d01-d069-4476-b7ab-4a775fcb5f25"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/02%2018%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20abad7d01d0694476b7ab4a775fcb5f25.html">02.18 기도제목</a></td><td class="cell-^i}o"><time>@2024년 2월 18일</time></td></tr><tr id="a3c55ee1-2d01-4dca-88d8-6b55a9d78ed2"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/02%2025%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20a3c55ee12d014dca88d86b55a9d78ed2.html">02.25 기도제목</a></td><td class="cell-^i}o"></td></tr><tr id="c13ff491-2613-4f79-ad58-c364599eb0b2"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/03%2003%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20c13ff49126134f79ad58c364599eb0b2.html">03.03 기도제목</a></td><td class="cell-^i}o"><time>@2024년 3월 3일</time></td></tr><tr id="c18a960b-3d95-4496-9e91-054d58fb0f17"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/03%2010%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20c18a960b3d9544969e91054d58fb0f17.html">03.10 기도제목</a></td><td class="cell-^i}o"><time>@2024년 3월 10일</time></td></tr><tr id="69f3a73e-5e4b-4d25-950a-1a07c43296fb"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/03%2017%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%2069f3a73e5e4b4d25950a1a07c43296fb.html">03.17 기도제목</a></td><td class="cell-^i}o"></td></tr><tr id="5538325a-2f80-454c-a4bd-5a8d98870255"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/03%2024%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%205538325a2f80454ca4bd5a8d98870255.html">03.24 기도제목</a></td><td class="cell-^i}o"><time>@2024년 3월 24일</time></td></tr><tr id="4f6471d2-299c-4bc0-982e-05890cf05d29"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/04%2007%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%204f6471d2299c4bc0982e05890cf05d29.html">04.07 기도제목</a></td><td class="cell-^i}o"><time>@2024년 4월 7일</time></td></tr><tr id="2c9662f5-7109-4c9d-8014-88c57f0ae42c"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/04%2014%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%202c9662f571094c9d801488c57f0ae42c.html">04.14 기도제목</a></td><td class="cell-^i}o"><time>@2024년 4월 14일</time></td></tr><tr id="5ebfc92c-0dcd-4f44-ab07-0d55c286997a"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/04%2021%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%205ebfc92c0dcd4f44ab070d55c286997a.html">04.21 기도제목</a></td><td class="cell-^i}o"><time>@2024년 4월 21일</time></td></tr><tr id="ca4ff93c-8090-4d3d-b3f4-8a632f9d493a"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/04%2028%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20ca4ff93c80904d3db3f48a632f9d493a.html">04.28 기도제목</a></td><td class="cell-^i}o"></td></tr><tr id="89a454fe-2e2e-428d-9fba-a1c7d90de1e1"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/05%2012%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%2089a454fe2e2e428d9fbaa1c7d90de1e1.html">05.12 기도제목</a></td><td class="cell-^i}o"><time>@2024년 5월 12일</time></td></tr><tr id="9760acf3-fe3d-4836-b20a-fc709abbd527"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/06%2002%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%209760acf3fe3d4836b20afc709abbd527.html">06.02 기도제목</a></td><td class="cell-^i}o"><time>@2024년 6월 2일</time></td></tr><tr id="6f4f7e8a-2d57-4b70-9c31-e179bbe0faa2"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/06%2016%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%206f4f7e8a2d574b709c31e179bbe0faa2.html">06.16 기도제목</a></td><td class="cell-^i}o"><time>@2024년 6월 16일</time></td></tr><tr id="25a9cfd7-321a-44e3-9c02-87f4d51e76c0"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/06%2023%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%2025a9cfd7321a44e39c0287f4d51e76c0.html">06.23 기도제목</a></td><td class="cell-^i}o"><time>@2024년 6월 23일</time></td></tr><tr id="0a231684-ebdc-4a90-b86d-1b80edf1c468"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/06%2030%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%200a231684ebdc4a90b86d1b80edf1c468.html">06.30 기도제목</a></td><td class="cell-^i}o"><time>@2024년 6월 30일</time></td></tr><tr id="c6273744-be36-439a-9416-2fc3a39134eb"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/07%2007%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20c6273744be36439a94162fc3a39134eb.html">07.07 기도제목</a></td><td class="cell-^i}o"><time>@2024년 7월 7일</time></td></tr><tr id="f538a479-6ea0-4f15-8636-a044c40ce005"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/07%2014%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20f538a4796ea04f158636a044c40ce005.html">07.14 기도제목</a></td><td class="cell-^i}o"><time>@2024년 7월 14일</time></td></tr><tr id="a3ab6fbb-061f-4396-9a92-2ef1007778b3"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EA%B8%B0%EB%8F%84%20%EC%A0%9C%EB%AA%A9/07%2028%20%EA%B8%B0%EB%8F%84%EC%A0%9C%EB%AA%A9%20a3ab6fbb061f43969a922ef1007778b3.html">07.28 기도제목</a></td><td class="cell-^i}o"><time>@2024년 7월 28일</time></td></tr></tbody></table><br/><br/></div></div><div style="display:contents" dir="auto"><hr id="a9a2aa44-9ba0-43f1-a975-16b8c3b8ed2b"/></div><div style="display:contents" dir="auto"><h1 id="1d318f23-baf0-4878-be49-c7c855dc8a68" class="">🎉Happy Birthday! 🎂</h1></div><div style="display:contents" dir="auto"><div id="f81ccf59-9e2b-41e4-9acf-b8b655834bc9" class="column-list"><div style="display:contents" dir="auto"><div id="98afa62c-d2ac-49d9-8e99-5b1b4a2b37ab" style="width:81.25%" class="column"><div style="display:contents" dir="ltr"><div id="b1aaec9b-1a08-4e73-bbc4-4c16300b0eb7" class="collection-content"><h4 class="collection-title">마을원 생일 캘린더</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>이름</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>날짜</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>상태</th></tr></thead><tbody><tr id="1f897003-46ef-43de-9ed4-6b470f2b802b"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EC%84%9C%EC%A7%84%EC%9D%B4%20%EC%83%9D%EC%9D%BC%201f89700346ef43de9ed46b470f2b802b.html"><span class="icon">🎂</span>서진이 생일</a></td><td class="cell-Pm}W"><time>@2024년 2월 28일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="2e15094b-1fc8-4d7e-ab13-f86bf1dff0e7"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EC%98%88%EB%A6%BC%EC%9D%B4%20%EC%83%9D%EC%9D%BC%202e15094b1fc84d7eab13f86bf1dff0e7.html"><span class="icon">🎂</span>예림이 생일</a></td><td class="cell-Pm}W"><time>@2024년 3월 23일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="c8e65938-427d-4b31-b96b-d7e8d736614d"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EA%B1%B4%EB%B2%94%EC%9D%B4%20%EC%83%9D%EC%9D%BC%20c8e65938427d4b31b96bd7e8d736614d.html"><span class="icon">🎂</span>건범이 생일</a></td><td class="cell-Pm}W"><time>@2024년 4월 21일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="12c7a0f3-22b1-4367-bdc3-2feeb5692cdd"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EB%AF%BC%EC%9E%AC%20%EC%83%9D%EC%9D%BC%2012c7a0f322b14367bdc32feeb5692cdd.html"><span class="icon">🎂</span>민재 생일</a></td><td class="cell-Pm}W"><time>@2024년 5월 28일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="0d6ac01f-1855-4612-9849-212121ad30c9"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EC%A7%80%EC%98%81%EC%9D%B4%20%EC%83%9D%EC%9D%BC%200d6ac01f185546129849212121ad30c9.html"><span class="icon">🎂</span>지영이 생일</a></td><td class="cell-Pm}W"><time>@2024년 7월 18일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="8305e1f6-d1d4-412f-8f74-f398b80f1c5b"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EC%A3%BC%EC%9B%90%EC%9D%B4%20%EC%83%9D%EC%9D%BC%208305e1f6d1d4412f8f74f398b80f1c5b.html"><span class="icon">🎂</span>주원이 생일</a></td><td class="cell-Pm}W"><time>@2024년 8월 22일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="d23e1a32-15b9-4c45-96a7-1cb35840f727"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%ED%83%9C%EC%96%91%EC%9D%B4%20%EC%83%9D%EC%9D%BC%20d23e1a3215b94c4596a71cb35840f727.html"><span class="icon">🎂</span>태양이 생일</a></td><td class="cell-Pm}W"><time>@2024년 9월 22일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="2d56e4a8-5be5-4c07-8b44-04d7406fa7f8"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EB%AF%BC%EC%A7%80%20%EC%83%9D%EC%9D%BC%202d56e4a85be54c078b4404d7406fa7f8.html"><span class="icon">🎂</span>민지 생일</a></td><td class="cell-Pm}W"><time>@2024년 10월 5일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="f59e6892-db1c-4253-89d6-7f903ee212f1"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%ED%98%B8%EC%98%81%EC%9D%B4%20%EC%83%9D%EC%9D%BC%20f59e6892db1c425389d67f903ee212f1.html"><span class="icon">🎂</span>호영이 생일</a></td><td class="cell-Pm}W"><time>@2024년 5월 27일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr></tbody></table><br/><br/></div></div><div style="display:contents" dir="auto"><p id="55308da9-3125-40bb-92aa-5be6c23dce1b" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="bca9cfee-380d-45cf-8e9d-de4497a7406c" style="width:18.75%" class="column"><div style="display:contents" dir="ltr"><div id="6dfe45c2-0f93-48f8-883d-7905bdd07acb" class="collection-content"><h4 class="collection-title">마을원 생일 캘린더</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>이름</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>날짜</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>상태</th></tr></thead><tbody><tr id="1f897003-46ef-43de-9ed4-6b470f2b802b"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EC%84%9C%EC%A7%84%EC%9D%B4%20%EC%83%9D%EC%9D%BC%201f89700346ef43de9ed46b470f2b802b.html"><span class="icon">🎂</span>서진이 생일</a></td><td class="cell-Pm}W"><time>@2024년 2월 28일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="2e15094b-1fc8-4d7e-ab13-f86bf1dff0e7"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EC%98%88%EB%A6%BC%EC%9D%B4%20%EC%83%9D%EC%9D%BC%202e15094b1fc84d7eab13f86bf1dff0e7.html"><span class="icon">🎂</span>예림이 생일</a></td><td class="cell-Pm}W"><time>@2024년 3월 23일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="c8e65938-427d-4b31-b96b-d7e8d736614d"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EA%B1%B4%EB%B2%94%EC%9D%B4%20%EC%83%9D%EC%9D%BC%20c8e65938427d4b31b96bd7e8d736614d.html"><span class="icon">🎂</span>건범이 생일</a></td><td class="cell-Pm}W"><time>@2024년 4월 21일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="f59e6892-db1c-4253-89d6-7f903ee212f1"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%ED%98%B8%EC%98%81%EC%9D%B4%20%EC%83%9D%EC%9D%BC%20f59e6892db1c425389d67f903ee212f1.html"><span class="icon">🎂</span>호영이 생일</a></td><td class="cell-Pm}W"><time>@2024년 5월 27일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="12c7a0f3-22b1-4367-bdc3-2feeb5692cdd"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EB%AF%BC%EC%9E%AC%20%EC%83%9D%EC%9D%BC%2012c7a0f322b14367bdc32feeb5692cdd.html"><span class="icon">🎂</span>민재 생일</a></td><td class="cell-Pm}W"><time>@2024년 5월 28일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="0d6ac01f-1855-4612-9849-212121ad30c9"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EC%A7%80%EC%98%81%EC%9D%B4%20%EC%83%9D%EC%9D%BC%200d6ac01f185546129849212121ad30c9.html"><span class="icon">🎂</span>지영이 생일</a></td><td class="cell-Pm}W"><time>@2024년 7월 18일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="8305e1f6-d1d4-412f-8f74-f398b80f1c5b"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EC%A3%BC%EC%9B%90%EC%9D%B4%20%EC%83%9D%EC%9D%BC%208305e1f6d1d4412f8f74f398b80f1c5b.html"><span class="icon">🎂</span>주원이 생일</a></td><td class="cell-Pm}W"><time>@2024년 8월 22일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="d23e1a32-15b9-4c45-96a7-1cb35840f727"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%ED%83%9C%EC%96%91%EC%9D%B4%20%EC%83%9D%EC%9D%BC%20d23e1a3215b94c4596a71cb35840f727.html"><span class="icon">🎂</span>태양이 생일</a></td><td class="cell-Pm}W"><time>@2024년 9월 22일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr><tr id="2d56e4a8-5be5-4c07-8b44-04d7406fa7f8"><td class="cell-title"><a href="%ED%83%9C%EC%96%91%20%EB%A7%88%EC%9D%84%E2%98%80%EF%B8%8F/%EB%A7%88%EC%9D%84%EC%9B%90%20%EC%83%9D%EC%9D%BC%20%EC%BA%98%EB%A6%B0%EB%8D%94/%EB%AF%BC%EC%A7%80%20%EC%83%9D%EC%9D%BC%202d56e4a85be54c078b4404d7406fa7f8.html"><span class="icon">🎂</span>민지 생일</a></td><td class="cell-Pm}W"><time>@2024년 10월 5일</time></td><td class="cell-TgEE"><span class="selected-value select-value-color-default">생일 날짜</span></td></tr></tbody></table><br/><br/></div></div><div style="display:contents" dir="auto"><p id="51c7c9f9-97a9-437f-a6ad-44897f113704" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="auto"><p id="cd777115-1070-4280-9395-e3baa4ae60d4" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

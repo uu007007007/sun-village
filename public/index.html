@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태양 마을 ☀️ - Sun Village</title>
+    <link rel="stylesheet" href="css/styles.css?v=11">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+                        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+                        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+                        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </span>
+                <span class="logo-text">태양 마을</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link" data-page="home">홈</a></li>
+                <li><a href="#" class="nav-link" data-page="about">소개</a></li>
+                <li><a href="#" class="nav-link" data-page="members">마을원</a></li>
+                <li><a href="#" class="nav-link" data-page="activities">활동</a></li>
+                <li><a href="#" class="nav-link" data-page="prayer">기도</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="pageContainer">
+
+    <!-- Home Page -->
+    <div class="page active" data-page-content="home">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+            </div>
+            <h1 class="hero-title">태양 마을</h1>
+            <p class="hero-subtitle">함께 성장하고, 사랑하며, 빛나는 공동체</p>
+            <div class="hero-cta">
+                <a href="#about" class="btn btn-primary btn-navigate" data-page="about">마을 둘러보기</a>
+                <a href="#activities" class="btn btn-outline btn-navigate" data-page="activities">활동 보기</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-icon"></div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="about" class="section video-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">About Us</span>
+                <h2 class="section-title">마을 소개</h2>
+                <p class="section-description">우리 마을을 소개합니다</p>
+            </div>
+            <div class="video-wrapper">
+                <video controls class="main-video">
+                    <source src="/assets/태양_마을.mp4" type="video/mp4">
+                    브라우저가 비디오를 지원하지 않습니다.
+                </video>
+            </div>
+            <div class="pdf-download">
+                <a href="/assets/태양마을_마을_발표_자료.pdf" class="download-link" target="_blank">
+                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                    </svg>
+                    <span>마을 발표 자료 다운로드</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Values -->
+    <section class="section values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Values</span>
+                <h2 class="section-title">마을 운영 가치</h2>
+                <p class="section-description">우리가 추구하는 네 가지 핵심 가치</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card" data-value="comfort">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">위로</h3>
+                    <p class="value-description">마을안에서 위로를 받고 마음의 안식처가 되었으면 좋겠다.</p>
+                </div>
+                <div class="value-card" data-value="growth">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22c.55 0 1-.45 1-1v-9c0-.55.45-1 1-1h5c.55 0 1-.45 1-1V7c0-3.87-3.13-7-7-7S6 3.13 6 7v3c0 .55.45 1 1 1h5c.55 0 1 .45 1 1v9c0 .55.45 1 1 1z"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">성숙</h3>
+                    <p class="value-description">한 해동안 마을 안에서 지내며 신앙적으로도 함께 성숙해 질 수 있는 마을이 되었으면 좋겠다.</p>
+                </div>
+                <div class="value-card" data-value="love">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">사랑</h3>
+                    <p class="value-description">우리 마을 안에서는 항상 서로 사랑하고, 아껴주는 관계가 형성되면 좋겠다.</p>
+                </div>
+                <div class="value-card" data-value="joy">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">재미</h3>
+                    <p class="value-description">무엇보다도 이 관계가 부담스럽지 않고, 마을 사람들과 함께하는 모든 시간이 편안하고 즐거운 시간이면 좋겠다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Village Members Section -->
+    <section class="section village-members-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Members</span>
+                <h2 class="section-title">마을 멤버</h2>
+                <p class="section-description">함께하는 태양 마을 11명의 가족</p>
+            </div>
+            <div class="members-grid">
+                <div class="member-card" style="background-image: url('/assets/members/태양.png')">
+                    <div class="member-info">
+                        <span class="member-name">태양</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">리더</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/서진.png')">
+                    <div class="member-info">
+                        <span class="member-name">서진</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">헬퍼</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/예림.png')">
+                    <div class="member-info">
+                        <span class="member-name">예림</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">포토그래퍼</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/민지.png')">
+                    <div class="member-info">
+                        <span class="member-name">민지</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">생일 지킴이</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/민재.png')">
+                    <div class="member-info">
+                        <span class="member-name">민재</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">먹 GPT</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/지영.png')">
+                    <div class="member-info">
+                        <span class="member-name">지영</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">타임키퍼</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/주원.png')">
+                    <div class="member-info">
+                        <span class="member-name">주원</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">타임키퍼</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/건범.png')">
+                    <div class="member-info">
+                        <span class="member-name">건범</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">팔로워</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/호영.png')">
+                    <div class="member-info">
+                        <span class="member-name">호영</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">팔로워</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/찬규.png')">
+                    <div class="member-info">
+                        <span class="member-name">찬규</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">멤버</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/지민.png')">
+                    <div class="member-info">
+                        <span class="member-name">지민</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">멤버</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members" class="section members-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Team</span>
+                <h2 class="section-title">마을원 역할</h2>
+                <p class="section-description">각자의 역할로 하나되는 공동체</p>
+            </div>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-badge leader">리더</div>
+                    <h4 class="role-name">리더</h4>
+                    <p class="role-desc">마을원들이 자유롭게 의견을 제시하고, 생각할 수 있는 환경 조성</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-red">태양</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge helper">헬퍼</div>
+                    <h4 class="role-name">헬퍼</h4>
+                    <p class="role-desc">주도적으로 묵상을 진행, 마을 분위기를 함께 조성</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-teal">서진</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge photographer">Photographer</div>
+                    <h4 class="role-name">포토그래퍼</h4>
+                    <p class="role-desc">마을 모임, 아웃팅 사진 찍어서 단톡방에 올리기</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-pink">예림</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge birthday">생일 지킴이</div>
+                    <h4 class="role-name">생일 지킴이</h4>
+                    <p class="role-desc">마을원들 생일이 있을 때마다 축하멘트를 올려주고, 케이크 준비해주기</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-brown">민지</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge food">먹 GPT</div>
+                    <h4 class="role-name">먹 GPT</h4>
+                    <p class="role-desc">아웃팅에서 다같이 식사를 하는 경우 메뉴 선정 담당</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-yellow">민재</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge timekeeper">타임키퍼</div>
+                    <h4 class="role-name">타임키퍼</h4>
+                    <p class="role-desc">항상 예배 일찍 도착하여 마을원들을 기다리고, 예배 30분 전에 단톡에 공지하기</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-purple">지영</span>
+                        <span class="member-tag tag-orange">주원</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge follower">팔로워</div>
+                    <h4 class="role-name">팔로워</h4>
+                    <p class="role-desc">마을 리더와 헬퍼를 잘 따라주고, 협조하며 마을원들과 친밀한 관계 유지</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-blue">건범</span>
+                        <span class="member-tag tag-gray">호영</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Section -->
+    <section class="section birthday-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Celebrations</span>
+                <h2 class="section-title">생일 캘린더</h2>
+                <p class="section-description">마을원들의 특별한 날을 함께 축하합니다</p>
+            </div>
+            <div class="birthday-timeline">
+                <div class="birthday-item">
+                    <div class="birthday-date">2월 28일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">서진</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">3월 23일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">예림</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">4월 21일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">건범</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">5월 27일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">호영</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">5월 28일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">민재</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">7월 18일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">지영</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">8월 22일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">주원</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">9월 22일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">태양</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">10월 5일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">민지</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="section activities-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Activities</span>
+                <h2 class="section-title">버킷 리스트</h2>
+                <p class="section-description">함께 이루어가는 목표들</p>
+            </div>
+            <div class="bucket-list-modern">
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>예배 15분 전 도착</h4>
+                        <p>예배가 시작하기 15분 전에 와서 예배를 준비하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>단체 사진 남기기</h4>
+                        <p>매 모임마다 단체 사진 남기기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>함께 앉기</h4>
+                        <p>일찍와서 항상 다같이 앉기 - 가까워지기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>생일 챙기기</h4>
+                        <p>마을원 모두의 생일 챙기기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>교회 행사 참여</h4>
+                        <p>교회 행사 모두 다같이 빠지지 않고 참여하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>묵상 습관</h4>
+                        <p>묵상하는 습관만들기 (일주일에 한번이라도 꾸준히)</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>함께 식사</h4>
+                        <p>예배 이후에 시간이 되는 사람들은 같이 밥한끼 먹기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>성경책 가져오기</h4>
+                        <p>예배 시간에 성경책 준비하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>보드게임카페 가기</h4>
+                        <p>함께 보드게임카페에서 즐거운 시간 보내기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>피크닉 하기</h4>
+                        <p>야외에서 함께 피크닉 즐기기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>플리마켓</h4>
+                        <p>마을원들과 플리마켓 함께 참여하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>롤링페이퍼</h4>
+                        <p>서로에게 응원과 감사의 메시지 전하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>질문 보드게임</h4>
+                        <p>서로를 더 알아가는 질문 보드게임 하기</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meetings Section -->
+    <section class="section meetings-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Meeting History</span>
+                <h2 class="section-title">마을 모임 기록</h2>
+                <p class="section-description">일자를 클릭하면 해당 모임의 상세 내용과 사진을 볼 수 있습니다</p>
+            </div>
+
+            <!-- Meeting Timeline -->
+            <div class="meetings-timeline" id="meetingsTimeline">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Section -->
+    <section id="prayer" class="section prayer-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Prayer</span>
+                <h2 class="section-title">기도 제목</h2>
+                <p class="section-description">함께 기도하며 나아갑니다</p>
+            </div>
+            <div class="prayer-content">
+                <div class="prayer-card">
+                    <div class="prayer-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12l7-7 7 7"/>
+                            <path d="M12 5c-2 0-4 2-4 4v6c0 1 .5 2 1 2s1-1 1-2v-3"/>
+                            <path d="M12 5c2 0 4 2 4 4v6c0 1-.5 2-1 2s-1-1-1-2v-3"/>
+                        </svg>
+                    </div>
+                    <h4>정기 기도 모임</h4>
+                    <p>매주 마을 모임에서 서로의 기도 제목을 나누고 함께 기도합니다. 기도제목은 매주 기록되어 지속적으로 관리됩니다.</p>
+                </div>
+                <div class="prayer-list">
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>마을원들의 신앙 성장</span>
+                    </div>
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>마을 공동체의 사랑과 화합</span>
+                    </div>
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>각자의 학업과 진로</span>
+                    </div>
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>가족들의 건강과 평안</span>
+                    </div>
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>교회와 마을 사역을 위한 기도</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management Guidelines -->
+    <section class="section guidelines-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Guidelines</span>
+                <h2 class="section-title">마을 챙기기</h2>
+                <p class="section-description">마을을 더 따뜻하게 가꾸는 방법</p>
+            </div>
+            <div class="guidelines-grid">
+                <div class="guideline-item">
+                    <div class="guideline-number">01</div>
+                    <p>기도제목을 항상 기록하고, 파일로 모두 모아서 정리하기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">02</div>
+                    <p>마을원들 모두와 1:1 만남 가지기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">03</div>
+                    <p>매일 묵상을 진행하여 마을 사람들에게 공유하기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">04</div>
+                    <p>기도와 묵상으로 예배와 마을모임 미리 준비하기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">05</div>
+                    <p>마을원들이 자유롭게 의견을 제시할 수 있는 편안한 분위기 만들기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">06</div>
+                    <p>예배가 끝나면 바로 마을원들 챙기기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">07</div>
+                    <p>주보를 미리미리 공유하고, 광고 내용에 대해서 꼭 설명해주기</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <!-- End Home Page -->
+
+    <!-- About Page -->
+    <div class="page" data-page-content="about">
+    <!-- Video Section -->
+    <section id="about" class="section video-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">About Us</span>
+                <h2 class="section-title">마을 소개</h2>
+                <p class="section-description">우리 마을을 소개합니다</p>
+            </div>
+            <div class="video-wrapper">
+                <video controls class="main-video">
+                    <source src="/assets/태양_마을.mp4" type="video/mp4">
+                    브라우저가 비디오를 지원하지 않습니다.
+                </video>
+            </div>
+            <div class="pdf-download">
+                <a href="/assets/태양마을_마을_발표_자료.pdf" class="download-link" target="_blank">
+                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                    </svg>
+                    <span>마을 발표 자료 다운로드</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Values -->
+    <section class="section values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Values</span>
+                <h2 class="section-title">마을 운영 가치</h2>
+                <p class="section-description">우리가 추구하는 네 가지 핵심 가치</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card" data-value="comfort">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">위로</h3>
+                    <p class="value-description">마을안에서 위로를 받고 마음의 안식처가 되었으면 좋겠다.</p>
+                </div>
+                <div class="value-card" data-value="growth">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22c.55 0 1-.45 1-1v-9c0-.55.45-1 1-1h5c.55 0 1-.45 1-1V7c0-3.87-3.13-7-7-7S6 3.13 6 7v3c0 .55.45 1 1 1h5c.55 0 1 .45 1 1v9c0 .55.45 1 1 1z"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">성숙</h3>
+                    <p class="value-description">한 해동안 마을 안에서 지내며 신앙적으로도 함께 성숙해 질 수 있는 마을이 되었으면 좋겠다.</p>
+                </div>
+                <div class="value-card" data-value="love">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">사랑</h3>
+                    <p class="value-description">우리 마을 안에서는 항상 서로 사랑하고, 아껴주는 관계가 형성되면 좋겠다.</p>
+                </div>
+                <div class="value-card" data-value="joy">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">재미</h3>
+                    <p class="value-description">무엇보다도 이 관계가 부담스럽지 않고, 마을 사람들과 함께하는 모든 시간이 편안하고 즐거운 시간이면 좋겠다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <!-- End About Page -->
+
+    <!-- Members Page -->
+    <div class="page" data-page-content="members">
+    <!-- Village Members Section -->
+    <section class="section village-members-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Members</span>
+                <h2 class="section-title">마을 멤버</h2>
+                <p class="section-description">함께하는 태양 마을 11명의 가족</p>
+            </div>
+            <div class="members-grid">
+                <div class="member-card" style="background-image: url('/assets/members/태양.png')">
+                    <div class="member-info">
+                        <span class="member-name">태양</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">리더</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/서진.png')">
+                    <div class="member-info">
+                        <span class="member-name">서진</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">헬퍼</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/예림.png')">
+                    <div class="member-info">
+                        <span class="member-name">예림</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">포토그래퍼</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/민지.png')">
+                    <div class="member-info">
+                        <span class="member-name">민지</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">생일 지킴이</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/민재.png')">
+                    <div class="member-info">
+                        <span class="member-name">민재</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">먹 GPT</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/지영.png')">
+                    <div class="member-info">
+                        <span class="member-name">지영</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">타임키퍼</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/주원.png')">
+                    <div class="member-info">
+                        <span class="member-name">주원</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">타임키퍼</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/건범.png')">
+                    <div class="member-info">
+                        <span class="member-name">건범</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">팔로워</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/호영.png')">
+                    <div class="member-info">
+                        <span class="member-name">호영</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">팔로워</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/찬규.png')">
+                    <div class="member-info">
+                        <span class="member-name">찬규</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">멤버</span>
+                    </div>
+                </div>
+                <div class="member-card" style="background-image: url('/assets/members/지민.png')">
+                    <div class="member-info">
+                        <span class="member-name">지민</span>
+                        <span class="member-divider">|</span>
+                        <span class="member-role">멤버</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members" class="section members-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Team</span>
+                <h2 class="section-title">마을원 역할</h2>
+                <p class="section-description">각자의 역할로 하나되는 공동체</p>
+            </div>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-badge leader">리더</div>
+                    <h4 class="role-name">리더</h4>
+                    <p class="role-desc">마을원들이 자유롭게 의견을 제시하고, 생각할 수 있는 환경 조성</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-red">태양</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge helper">헬퍼</div>
+                    <h4 class="role-name">헬퍼</h4>
+                    <p class="role-desc">주도적으로 묵상을 진행, 마을 분위기를 함께 조성</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-teal">서진</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge photographer">Photographer</div>
+                    <h4 class="role-name">포토그래퍼</h4>
+                    <p class="role-desc">마을 모임, 아웃팅 사진 찍어서 단톡방에 올리기</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-pink">예림</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge birthday">생일 지킴이</div>
+                    <h4 class="role-name">생일 지킴이</h4>
+                    <p class="role-desc">마을원들 생일이 있을 때마다 축하멘트를 올려주고, 케이크 준비해주기</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-brown">민지</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge food">먹 GPT</div>
+                    <h4 class="role-name">먹 GPT</h4>
+                    <p class="role-desc">아웃팅에서 다같이 식사를 하는 경우 메뉴 선정 담당</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-yellow">민재</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge timekeeper">타임키퍼</div>
+                    <h4 class="role-name">타임키퍼</h4>
+                    <p class="role-desc">항상 예배 일찍 도착하여 마을원들을 기다리고, 예배 30분 전에 단톡에 공지하기</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-purple">지영</span>
+                        <span class="member-tag tag-orange">주원</span>
+                    </div>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge follower">팔로워</div>
+                    <h4 class="role-name">팔로워</h4>
+                    <p class="role-desc">마을 리더와 헬퍼를 잘 따라주고, 협조하며 마을원들과 친밀한 관계 유지</p>
+                    <div class="role-members">
+                        <span class="member-tag tag-blue">건범</span>
+                        <span class="member-tag tag-gray">호영</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Section -->
+    <section class="section birthday-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Celebrations</span>
+                <h2 class="section-title">생일 캘린더</h2>
+                <p class="section-description">마을원들의 특별한 날을 함께 축하합니다</p>
+            </div>
+            <div class="birthday-timeline">
+                <div class="birthday-item">
+                    <div class="birthday-date">2월 28일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">서진</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">3월 23일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">예림</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">4월 21일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">건범</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">5월 27일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">호영</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">5월 28일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">민재</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">7월 18일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">지영</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">8월 22일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">주원</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">9월 22일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">태양</span>
+                    </div>
+                </div>
+                <div class="birthday-item">
+                    <div class="birthday-date">10월 5일</div>
+                    <div class="birthday-card-mini">
+                        <span class="birthday-emoji">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"/>
+                                <rect x="2" y="7" width="20" height="5"/>
+                                <line x1="12" y1="22" x2="12" y2="7"/>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </span>
+                        <span class="birthday-name">민지</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <!-- End Members Page -->
+
+    <!-- Activities Page -->
+    <div class="page" data-page-content="activities">
+    <!-- Activities Section -->
+    <section id="activities" class="section activities-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Activities</span>
+                <h2 class="section-title">버킷 리스트</h2>
+                <p class="section-description">함께 이루어가는 목표들</p>
+            </div>
+            <div class="bucket-list-modern">
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>예배 15분 전 도착</h4>
+                        <p>예배가 시작하기 15분 전에 와서 예배를 준비하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>단체 사진 남기기</h4>
+                        <p>매 모임마다 단체 사진 남기기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>함께 앉기</h4>
+                        <p>일찍와서 항상 다같이 앉기 - 가까워지기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>생일 챙기기</h4>
+                        <p>마을원 모두의 생일 챙기기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>교회 행사 참여</h4>
+                        <p>교회 행사 모두 다같이 빠지지 않고 참여하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>묵상 습관</h4>
+                        <p>묵상하는 습관만들기 (일주일에 한번이라도 꾸준히)</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>함께 식사</h4>
+                        <p>예배 이후에 시간이 되는 사람들은 같이 밥한끼 먹기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>성경책 가져오기</h4>
+                        <p>예배 시간에 성경책 준비하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>보드게임카페 가기</h4>
+                        <p>함께 보드게임카페에서 즐거운 시간 보내기</p>
+                    </div>
+                </div>
+                <div class="bucket-item completed">
+                    <div class="bucket-check">✓</div>
+                    <div class="bucket-content">
+                        <h4>피크닉 하기</h4>
+                        <p>야외에서 함께 피크닉 즐기기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>플리마켓</h4>
+                        <p>마을원들과 플리마켓 함께 참여하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>롤링페이퍼</h4>
+                        <p>서로에게 응원과 감사의 메시지 전하기</p>
+                    </div>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <div class="bucket-content">
+                        <h4>질문 보드게임</h4>
+                        <p>서로를 더 알아가는 질문 보드게임 하기</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meetings Section -->
+    <section class="section meetings-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Meeting History</span>
+                <h2 class="section-title">마을 모임 기록</h2>
+                <p class="section-description">일자를 클릭하면 해당 모임의 상세 내용과 사진을 볼 수 있습니다</p>
+            </div>
+
+            <!-- Meeting Timeline -->
+            <div class="meetings-timeline" id="meetingsTimeline">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Meeting Detail Modal -->
+    <div class="meeting-modal" id="meetingModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Media Preview Modal -->
+    <div class="media-preview-modal" id="mediaPreviewModal">
+        <div class="media-preview-overlay" id="mediaPreviewOverlay"></div>
+        <button class="media-preview-close" id="mediaPreviewClose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <button class="media-preview-nav media-preview-prev" id="mediaPreviewPrev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="media-preview-nav media-preview-next" id="mediaPreviewNext">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <div class="media-preview-counter" id="mediaPreviewCounter"></div>
+        <div class="media-preview-content" id="mediaPreviewContent">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
+    </div>
+    <!-- End Activities Page -->
+
+    <!-- Prayer Page -->
+    <div class="page" data-page-content="prayer">
+    <!-- Prayer Section -->
+    <section id="prayer" class="section prayer-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Prayer</span>
+                <h2 class="section-title">기도 제목</h2>
+                <p class="section-description">함께 기도하며 나아갑니다</p>
+            </div>
+            <div class="prayer-content">
+                <div class="prayer-card">
+                    <div class="prayer-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12l7-7 7 7"/>
+                            <path d="M12 5c-2 0-4 2-4 4v6c0 1 .5 2 1 2s1-1 1-2v-3"/>
+                            <path d="M12 5c2 0 4 2 4 4v6c0 1-.5 2-1 2s-1-1-1-2v-3"/>
+                        </svg>
+                    </div>
+                    <h4>정기 기도 모임</h4>
+                    <p>매주 마을 모임에서 서로의 기도 제목을 나누고 함께 기도합니다. 기도제목은 매주 기록되어 지속적으로 관리됩니다.</p>
+                </div>
+                <div class="prayer-list">
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>마을원들의 신앙 성장</span>
+                    </div>
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>마을 공동체의 사랑과 화합</span>
+                    </div>
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>각자의 학업과 진로</span>
+                    </div>
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>가족들의 건강과 평안</span>
+                    </div>
+                    <div class="prayer-item">
+                        <span class="prayer-bullet">•</span>
+                        <span>교회와 마을 사역을 위한 기도</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management Guidelines -->
+    <section class="section guidelines-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Guidelines</span>
+                <h2 class="section-title">마을 챙기기</h2>
+                <p class="section-description">마을을 더 따뜻하게 가꾸는 방법</p>
+            </div>
+            <div class="guidelines-grid">
+                <div class="guideline-item">
+                    <div class="guideline-number">01</div>
+                    <p>기도제목을 항상 기록하고, 파일로 모두 모아서 정리하기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">02</div>
+                    <p>마을원들 모두와 1:1 만남 가지기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">03</div>
+                    <p>매일 묵상을 진행하여 마을 사람들에게 공유하기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">04</div>
+                    <p>기도와 묵상으로 예배와 마을모임 미리 준비하기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">05</div>
+                    <p>마을원들이 자유롭게 의견을 제시할 수 있는 편안한 분위기 만들기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">06</div>
+                    <p>예배가 끝나면 바로 마을원들 챙기기</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-number">07</div>
+                    <p>주보를 미리미리 공유하고, 광고 내용에 대해서 꼭 설명해주기</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <!-- End Prayer Page -->
+
+    </div>
+    <!-- End Page Container -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+                            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+                            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+                            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">태양 마을</span>
+                </div>
+                <p class="footer-tagline">함께 성장하고, 사랑하며, 빛나는 공동체</p>
+                <p class="footer-copyright">© 2024 Sun Village. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span id="themeIcon">
+            <svg class="theme-icon moon" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </span>
+    </button>
+
+    <script src="js/meetingsData.js?v=11"></script>
+    <script src="js/main.js?v=11"></script>
+</body>
+</html>

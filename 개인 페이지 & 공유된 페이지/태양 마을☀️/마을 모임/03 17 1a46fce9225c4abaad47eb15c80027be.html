@@ -1,0 +1,715 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>03.17</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1a46fce9-225c-4aba-ad47-eb15c80027be" class="page sans"><header><h1 class="page-title" dir="auto">03.17</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>15분 전에 도착하기</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>사진 찍기</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>성경 챙겨오기</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>밥 같이 먹기</th><td><div class="checkbox checkbox-off"></div></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/groups_gray.svg" style="width:14px;height:14px;display:block"/></span>마을 모임 참석 인원</th><td><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-red">민재</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-brown">태양</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><div id="998796a4-f418-4fc7-bbed-4f218e9e4b91" class="column-list"><div style="display:contents" dir="auto"><div id="b93a19f7-21f8-4e7d-bd57-33878c431709" style="width:62.5%" class="column"><div style="display:contents" dir="ltr"><figure id="209b2a2e-e5f5-46f5-b69e-9b462ee0c9b5" class="image"><a href="03%2017/KakaoTalk_20240317_201810859_01.jpg"><img style="width:4032px" src="03%2017/KakaoTalk_20240317_201810859_01.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="4f456ee4-d86d-4339-8c91-8c6b9d349028" style="width:37.5%" class="column"><div style="display:contents" dir="ltr"><figure id="cf17f1d5-d255-46c4-bb85-70d768299b69" class="image"><a href="03%2017/KakaoTalk_20240317_201810859_02.jpg"><img style="width:3024px" src="03%2017/KakaoTalk_20240317_201810859_02.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="ff83f7ec-b13b-4853-a390-3f138941dc2c" class="">카3층 소그룹실이 너무 추운 관계로 엘림 카페에서 마을 모임을 진행했습니다-!</p></div><div style="display:contents" dir="auto"><p id="60ef0a5d-bc3c-4b5f-a0dd-234f3403b9dd" class="">오늘은 다들 마을데이하러 나와서 그런지 엘림카페에 다른 마을들도 정말 많았어용</p></div><div style="display:contents" dir="auto"><p id="efffb66f-43e3-4f01-979a-ecddc0eb8d97" class="">음료를 하나씩 시키고 다들 배가 많이 고팠는데 건범이가 허니브레드와 샌드위치, 랩을 사줬습니다 ㅠㅠㅠ😋</p></div><div style="display:contents" dir="auto"><p id="ee0b2157-d4de-47a1-93fa-7d8405eb000c" class="">맛있게 먹으며 말씀에 대해 나누고, 나의 조급한 마음들을 돌아보고 하나님의 응답을 다시금 되새겨 볼 수 있는 시간을 가졌습니다!</p></div><div style="display:contents" dir="auto"><p id="2ec843d5-6522-4701-a70f-be949b6ed503" class="">그리고 다음번에는 다같이 볼링이나 피구를 같이 하기러 기약하며 삶나눔을 하고 마무리 했습니다~</p></div><div style="display:contents" dir="auto"><p id="238020d6-916d-4b67-a9f7-88cd5a4f4211" class="">한주간 하나님의 시간을 사는 태양마을이 됩시다-!!</p></div><div style="display:contents" dir="auto"><p id="e867dba5-0dbf-4964-ab12-be2905609c48" class="">
+</p></div><div style="display:contents" dir="auto"><hr id="31fdf810-46c1-4095-adb7-02b7a0fd3896"/></div><div style="display:contents" dir="auto"><blockquote id="a3331412-17ce-43d9-b44a-c126a890b75b" class="">📖 말씀 내용</blockquote></div><div style="display:contents" dir="auto"><p id="0bb062fe-efd6-4143-91a8-b71bc877bb98" class="">배경: 이스라엘 백성들을 항상 억눌림을 받는 삶을 살고 있었고, 여호와의 날을 꿈꾸면 살았다.</p></div><div style="display:contents" dir="auto"><p id="450383a3-c247-4e3c-859c-c1a728b9e2cd" class="">그 가운데에 예수님께서는 <strong>섬기는 사역</strong>을 하시다가 이방인이었던 헬라인들이 나아왔을 때 <strong>십자가 사역</strong>을 시작하셨다.</p></div><div style="display:contents" dir="auto"><h2 id="d3e6227c-80df-442e-a24e-7d204a9a13e3" class="">하나님의 카이로스를 살 때 우리는 평안을 누린다.</h2></div><div style="display:contents" dir="auto"><p id="94d04e9d-5bfb-4778-b2b9-73bb75389c85" class="">헬라인들이 나아왔을 때 십자가의 사역을 시작한 예수님 → 모든 일에는 적당한 때가 있고 그에 따른 결과가 온다.</p></div><div style="display:contents" dir="auto"><p id="48c51ff8-fe9f-479f-a49f-aa52c22d3191" class="">세상에서는 내가 예상한 때에 결과가 나타나지 않고, 나의 계획과 나의 타이밍을 따라주지 않는다. → (세상이 정해놓은 때로 인해) 조급함과 불안함을 느끼게 됨</p></div><div style="display:contents" dir="auto"><ul id="ca2de284-8d2b-4a56-aa10-baf811882a1d" class="bulleted-list"><li style="list-style-type:disc">카이로스 vs 크로노스<div style="display:contents" dir="auto"><ul id="028b1233-7070-4ec6-a2c6-e8c5011006bb" class="bulleted-list"><li style="list-style-type:circle">카이로스 : 사람마다 개개인에게 다르게 느껴지는 시간</li></ul></div><div style="display:contents" dir="auto"><ul id="7b8470ad-c32f-4093-9e07-4a25e7511e03" class="bulleted-list"><li style="list-style-type:circle">크로노스 : 정량적인 모두에게 동일한 시간</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="a7dc20fa-236c-4e5e-888e-fc3f0651da9b" class="">우리는 삶의 방향조차 헷갈려 하는 상황에서 속도에 대한 압박이 있다보니 더욱 불안해짐</p></div><div style="display:contents" dir="auto"><p id="7453d1e4-799d-4fd8-9f1a-b4193846ca46" class="">그래서 우리는 남과 비교하면서 안정감을 찾으려 하고, 이렇게 <span style="border-bottom:0.05em solid">주변의 영향을 받는 인생</span>은 결국 <mark class="highlight-red"><strong>불안, 불행해짐</strong></mark></p></div><div style="display:contents" dir="auto"><p id="8c0ad934-628f-4400-bb97-3f1cbbbb616f" class="">⇒ 세상의 <strong>크로노스</strong>에 사는 우리는 조급함을 느끼게 되고, 하나님의 <strong>카이로스</strong>를 살 때 진정한 평안을 누릴 수 있다.</p></div><div style="display:contents" dir="auto"><p id="621cc733-53a8-461b-9a3e-8789a7904e88" class="">시간은 하나님께서 주신것</p></div><div style="display:contents" dir="auto"><p id="1ae9599a-2263-4739-a221-1030fb01fd66" class="">나의 시간이라고 생각하면 내 인생의 주인이 내가 되게 되고, 내가 정한 때를 따르게 되면 하나님께서 계획하신 적당한 때를 놓치게 된다.</p></div><div style="display:contents" dir="auto"><ul id="55f9fd48-3d10-4e57-bf27-f8a5b1c00d83" class="toggle"><li><details open=""><summary>‘차’의 비유</summary><div style="display:contents" dir="auto"><p id="61606406-63cb-4f52-b4b3-cb6f81d24870" class="">차는 각자마다 우려야하는 시간들이 정해져 있다.</p></div><div style="display:contents" dir="auto"><p id="ea327ddf-5228-47a0-8edf-5d80c5994a0c" class="">그 시간을 정확하게 우렸을 때만이 가장 최고의 차 맛을 낼 수 있게 된다.</p></div><div style="display:contents" dir="auto"><p id="c490c4e3-82e7-4df3-b0e3-d62d2bb62890" class="">그 때를 지키지 않으면 그 차는 고유의 맛을 잃게 되고, 맛없게 우려지게 된다.</p></div><div style="display:contents" dir="auto"><p id="67f8fcee-f3b6-4d53-b97d-491a2e282d1a" class="">이렇게 정해져 있는 시간을 신뢰하고 때를 기다려야 하는 것처럼 하나님을 신뢰하고 하나님의 때를 기다려야 한다.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><p id="8a58b7bc-605f-48b9-826f-5c91121b32ec" class=""><mark class="highlight-blue">⇒ 우리는 하나님이 주신 </mark><mark class="highlight-default"><strong>‘때’</strong></mark><mark class="highlight-blue">에 대해 민감하게 반응해야 함</mark></p></div><div style="display:contents" dir="auto"><h2 id="770df18d-1a77-4de2-9b29-d4ee2edfa2ea" class="">하나님의 때가 아닐 땐 멈춰야 하고, 하나님의 때를 보여주셨을 때 신속하게 반응해야 한다.</h2></div><div style="display:contents" dir="auto"><p id="d2fc3840-27ac-4103-bf81-2dc5e169c324" class="">예수님께서는 본인의 때를 받아들이고, <strong><span style="border-bottom:0.05em solid">결단</span></strong><span style="border-bottom:0.05em solid">을 미루지 않고</span> 곧바로 십자가의 길을 가셨다.</p></div><div style="display:contents" dir="auto"><p id="2cd06cde-73fd-4d7a-baaf-51c3ea2aa29d" class="">우리가 기도할 때마다 하나님은 이미 응답을 해주시지만, 우리는 상황과 마음을 계산하고 현실과 타협하여 때를 놓치게 됨</p></div><div style="display:contents" dir="auto"><p id="d90d8315-2b19-4bde-9c89-02fc3a888bbd" class="">하나님의 때는 우리에게는 불편하기 때문에 놓치기 쉬움</p></div><div style="display:contents" dir="auto"><p id="6227a2e1-c358-48b7-99d7-2dc27ad74fa4" class="">하지만 때는 항상 보여주시기 때문에 이에 <strong>바로 반응해야함</strong></p></div><div style="display:contents" dir="auto"><p id="f0c8e21a-7eea-42ed-a26a-84ee51b68f84" class="">바쁘다는 핑계를 대지만 <span style="border-bottom:0.05em solid">지금이 가장 여유로울 때</span>이다. <mark class="highlight-blue">청년부에 있을 때에 하나님을 찾아 부르짖고, 하나님을 알아갈 수 있을 때를 놓치지 말자.</mark></p></div><div style="display:contents" dir="auto"><p id="609f3ed0-ca8b-4065-83ad-6d2f0f007748" class="">마주하는 두려움의 순간들에 하나님을 고백하면서 극복하고, <mark class="highlight-red">하나님의 말씀에 반응해야 한다면 하나님의 뜻대로 </mark><mark class="highlight-red"><strong>결단</strong></mark><mark class="highlight-red">을 내리자</mark></p></div><div style="display:contents" dir="auto"><p id="93a6df45-180f-43ec-8abe-7ba527327006" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

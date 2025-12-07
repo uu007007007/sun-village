@@ -1,0 +1,714 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>5.19</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="71ddd4d8-913f-4a8f-b28c-7141b854517c" class="page sans"><header><h1 class="page-title" dir="auto">5.19</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>15분 전에 도착하기</th><td><div class="checkbox checkbox-off"></div></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>사진 찍기</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>성경 챙겨오기</th><td><div class="checkbox checkbox-off"></div></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>밥 같이 먹기</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/groups_gray.svg" style="width:14px;height:14px;display:block"/></span>마을 모임 참석 인원</th><td><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-brown">태양</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><h1 id="d9996285-e026-4bd6-b019-2b7b7841099c" class="">체육대회</h1></div><div style="display:contents" dir="auto"><p id="b919404c-8090-445e-91c7-ab42f55e5911" class="">오늘은 전교인 체육대회가 있어 연합예배를 드리고 체육대회로 바로 출발했습니다!</p></div><div style="display:contents" dir="auto"><p id="14c706d9-1d9b-48a4-812e-813614cfadbc" class="">체육대회에 참여하는 인원이 많이 없어 현주마을과 함께 이동을 했습니다.</p></div><div style="display:contents" dir="auto"><p id="a5175423-5aad-42c0-a719-02b9522a52a6" class="">원래는 민지와 태양만 있었는데 근처에 있던 지영이도 합류하게 되어서 함께 체육대회를 끝까지 함께하고 갔습니다! ㅋㅋㅋㅋㅋ</p></div><div style="display:contents" dir="auto"><p id="203ed1ed-457c-4291-be7a-282819ab470f" class="">날씨가 너무 뜨거워서 조금은 힘들고 지영이도 발목이 안좋아서 힘들어하기는 했지만 그래도 다같이 닭강정도 먹고, 김밥도 먹고 함께 체육대회를 참여하며 즐거운 시간을 보냈습니다!</p></div><div style="display:contents" dir="auto"><p id="1261b9b4-dc0c-45dd-9f5b-7c30c055d4cd" class="">그리고 다른 마을 사람들과도 친해질 수 있는 기회여서 좋았어요 :)</p></div><div style="display:contents" dir="auto"><p id="d410285e-7264-4437-b804-7b789b619e8c" class="">그리고 전혀 예상치도 못했는 청년부가 무려 3등!! 다음 체육대회에는 더 많은 사람들이 함께하면 재밌을거 같아요~!!</p></div><div style="display:contents" dir="auto"><div id="e38efcd7-925e-4302-b7a9-687a1e7ef595" class="column-list"><div style="display:contents" dir="auto"><div id="f8c89e4d-e31c-4740-982f-e53520dcacd1" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="2658be04-c4bb-4566-a306-992cdb2453e8" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_12.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_12.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="e5152344-3bfd-4fe9-a886-95c6529df044" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="82a13b65-2617-4450-8ac1-11e40aeaef14" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_13.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_13.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="79818b77-c291-4c49-ae53-b774af011df9" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="67c675da-b53c-426e-a11e-5b50e32c80e5" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_14.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_14.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="f0d09ab9-7c21-4ff0-a346-c9a034d6a9f9" class="column-list"><div style="display:contents" dir="auto"><div id="d118f1cd-7d5f-4093-b938-6a695c1c657d" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="64d54187-86f2-4726-8ca5-e7cf6064b6dc" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_15.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_15.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="e0f35819-5995-47de-897f-0784d53caa54" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="d772b6c8-4cf0-46ee-809c-c02504c9ce93" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_16.jpg"><img style="width:400.703125px" src="5%2019/KakaoTalk_20240526_221909335_16.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="21bca3f3-7fed-488c-b661-33ce9b6b77bd" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="6bbb4b8d-50fe-4c1d-a7c9-516ef77bf1e6" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_17.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_17.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="9b7c66f3-2541-46e7-91f8-8c0017aa821d" class="column-list"><div style="display:contents" dir="auto"><div id="0b025b7a-e7e6-4a5a-a538-ce5a87465c69" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="e1867e31-fc97-409f-a1a5-97609eda4df6" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_18.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_18.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="f05aaf89-acd4-4d6e-8849-8b6f1c82c7ee" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="e51b70d3-c093-45b4-bf2e-e90deee2013a" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_19.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_19.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="b1e4be9c-5fe7-4875-8a7d-2ae44fed51a3" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="33bacffa-f2ed-4369-80af-d7829bd1088f" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_20.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_20.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="78ef4abb-dbc1-4675-b8d7-2f186fdafb62" class="column-list"><div style="display:contents" dir="auto"><div id="c3bbb737-4dd2-4a36-8a43-db2a94f35c88" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="e85a96ce-db84-4242-acc6-ed53f847a9a3" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_21.jpg"><img style="width:400.703125px" src="5%2019/KakaoTalk_20240526_221909335_21.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="4806075a-2a36-4c46-bf60-be7c0526f061" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="4873d13e-266b-4e8f-9c15-afceefbe2545" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_22.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_22.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="edcb59dc-8b2e-41bd-a96e-d7b87340ec2a" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="6b84ced0-8517-44bb-ab1a-eda23be7a472" class="image"><a href="5%2019/KakaoTalk_20240526_221905842.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221905842.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="e952aa51-2ff1-4125-97d5-4994c17a11fb" class="column-list"><div style="display:contents" dir="auto"><div id="7c9c137c-3c39-4f00-a77c-718050abcdd5" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="fbc5eb4f-6104-4c0a-9007-803a72e176a5" class="image"><a href="5%2019/KakaoTalk_20240526_221905842_01.jpg"><img style="width:4032px" src="5%2019/KakaoTalk_20240526_221905842_01.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="c3a84279-bd6b-4cd3-a046-2032460c0abb" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="bfec033a-9937-42f4-8349-113e1c3f6a10" class="image"><a href="5%2019/KakaoTalk_20240526_221905842_02.jpg"><img style="width:400.703125px" src="5%2019/KakaoTalk_20240526_221905842_02.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="7d5890a5-95d7-4a6a-9d48-746f5e0cb6fb" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="91b0ec24-c3fd-42af-a043-121be8a1efb9" class="image"><a href="5%2019/KakaoTalk_20240526_221905842_03.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221905842_03.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="425e24db-8e3c-4fe3-9b26-2697603af4ae" class="column-list"><div style="display:contents" dir="auto"><div id="1dbde429-c131-4b4a-85b5-3098d3b51ee6" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="cde0c7ae-3963-4ab4-90dc-b85abd0385b0" class="image"><a href="5%2019/KakaoTalk_20240526_221905842_04.jpg"><img style="width:4032px" src="5%2019/KakaoTalk_20240526_221905842_04.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="e946b2eb-0d3b-4176-b4b3-9ef291b309be" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="733b2403-c2ba-426a-a34e-3ab42eace621" class="image"><a href="5%2019/KakaoTalk_20240526_221905842_05.jpg"><img style="width:4032px" src="5%2019/KakaoTalk_20240526_221905842_05.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="91d8c3db-bb65-44ce-b645-c24db0c2c6fb" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="6e2d2f52-7544-49c1-a7d2-de0bcb5e5486" class="image"><a href="5%2019/KakaoTalk_20240526_221909335.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="ad864932-a954-424a-897d-395ab37ef52c" class="column-list"><div style="display:contents" dir="auto"><div id="ce6e7c68-e7db-4aa5-995b-782ba11d97c2" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="b755067a-42f1-4f5b-9907-817cc6993c23" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_01.jpg"><img style="width:4032px" src="5%2019/KakaoTalk_20240526_221909335_01.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="f966e340-1a0d-42bd-8d9a-a128f8c4b305" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="2ef4964f-4719-4926-95a1-ec50621aaf32" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_02.jpg"><img style="width:400.703125px" src="5%2019/KakaoTalk_20240526_221909335_02.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="9316217d-2073-4f80-bfc2-ad447f314350" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="a78a95db-7089-4d59-95d5-c138f497d093" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_03.jpg"><img style="width:400.703125px" src="5%2019/KakaoTalk_20240526_221909335_03.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="0000d616-5896-41c6-b0a4-00c81795798d" class="column-list"><div style="display:contents" dir="auto"><div id="6ecdc9f4-3630-4e57-bc3d-7b663043add4" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="7b5212c3-05fb-44b5-a925-aa6c0003f6fb" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_04.jpg"><img style="width:4032px" src="5%2019/KakaoTalk_20240526_221909335_04.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="f06cb23b-0dad-4b31-8584-5ce217897079" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="f3dd5542-b3a4-4c20-a765-4958ef415a96" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_05.jpg"><img style="width:400.703125px" src="5%2019/KakaoTalk_20240526_221909335_05.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="84cc6bfa-88d4-45ea-bcc4-58d0ae3d939b" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="071499ac-0ec6-48ba-92e3-6ccc158dac6a" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_06.jpg"><img style="width:4032px" src="5%2019/KakaoTalk_20240526_221909335_06.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="c251daf7-baa0-40e9-bbce-8260fcba7353" class="column-list"><div style="display:contents" dir="auto"><div id="9d876752-a16f-46fd-89d4-59a5b844beb3" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="686d9537-9e0d-403d-8795-50f86eda9a16" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_07.jpg"><img style="width:400.703125px" src="5%2019/KakaoTalk_20240526_221909335_07.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="dca01688-d537-42af-93c1-728568aa4839" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="5ed9fd01-60b1-4e68-9190-b09ea85f876a" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_08.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_08.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="20b358a0-c683-4f42-8f25-ae1fba54f1fb" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="433e0a76-4c4f-412f-a7e3-ca8a81ecec95" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_09.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_09.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="540eca18-412d-493b-ace0-0a9ef4268cc4" class="column-list"><div style="display:contents" dir="auto"><div id="640bb1b0-e3f2-4bc2-8524-eb93de776f4b" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="556738ae-194a-422a-adc8-0f0666c1f7fd" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_10.jpg"><img style="width:3024px" src="5%2019/KakaoTalk_20240526_221909335_10.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="4f85a5e3-9e8d-483e-99ef-0bafe7b3d10b" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="8af0a95d-70fe-4a96-8432-2be628e1ae51" class="image"><a href="5%2019/KakaoTalk_20240526_221909335_11.jpg"><img style="width:400.703125px" src="5%2019/KakaoTalk_20240526_221909335_11.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="ltr"><figure id="06924848-86c3-4dd6-a3e3-dadbf146f43f"><div class="source"><a href="5%2019/KakaoTalk_20240526_221911962.mp4">https://prod-files-secure.s3.us-west-2.amazonaws.com/395e46bd-c9db-4ee4-8e27-3cac72b72fa4/ca721073-47c9-4a8b-83e1-e17af110ba48/KakaoTalk_20240526_221911962.mp4</a></div></figure></div><div style="display:contents" dir="auto"><p id="37cf70a7-6f07-452c-8495-a0e99f48ba92" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

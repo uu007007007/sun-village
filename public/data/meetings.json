@@ -1,0 +1,655 @@
+[
+  {
+    "date": "01.07",
+    "attendees": ["건범", "민재", "민지", "서진", "예림", "지영", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "첫 마을 모임",
+      "자기소개 시간",
+      "마을 운영 방향 논의"
+    ],
+    "photos": []
+  },
+  {
+    "date": "01.14",
+    "attendees": ["민재", "민지", "서진", "주원", "지영", "태양", "호영"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": true,
+      "mealTogether": false
+    },
+    "content": [
+      "카페에서 마을 모임",
+      "곤약젤리 나눠주기",
+      "삶나눔",
+      "서로 가 본 여행지 공유",
+      "Q. 하나님을 경험한 적이 있는가?",
+      "Q. 평상시에도 하나님을 경험하기 위해 집중하는가?"
+    ],
+    "photos": [
+      "/assets/마을 모임/01 14/240114_(1).jpg",
+      "/assets/마을 모임/01 14/240114_(2).jpg",
+      "/assets/마을 모임/01 14/240114_(3).jpg",
+      "/assets/마을 모임/01 14/240114_(4).jpg"
+    ]
+  },
+  {
+    "date": "01.21",
+    "attendees": ["민재", "민지", "서진", "예림", "주원", "태양", "호영"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "예배 후 마을 모임",
+      "새해 계획 나누기",
+      "기도 제목 공유"
+    ],
+    "photos": [
+      "/assets/마을 모임/01 21/240121_(1).jpg",
+      "/assets/마을 모임/01 21/240121_(2).jpg"
+    ]
+  },
+  {
+    "date": "01.28",
+    "attendees": ["민재", "민지", "서진", "예림", "주원", "태양", "호영"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": true,
+      "mealTogether": false
+    },
+    "content": [
+      "예배 및 마을 모임",
+      "한 주간의 일상 나누기",
+      "찬양 시간"
+    ],
+    "photos": [
+      "/assets/마을 모임/01 28/240128_(1).jpg",
+      "/assets/마을 모임/01 28/240128_(2).jpg",
+      "/assets/마을 모임/01 28/240128_(3).jpg"
+    ]
+  },
+  {
+    "date": "02.04",
+    "attendees": ["민재", "민지", "서진", "예림", "주원", "지영", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": false,
+      "bibleBrought": true,
+      "mealTogether": true
+    },
+    "content": [
+      "예배 후 함께 식사",
+      "마을원들과 친목 도모",
+      "다음 주 계획 공유"
+    ],
+    "photos": []
+  },
+  {
+    "date": "02.18",
+    "attendees": ["민지", "예림", "주원", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": true,
+      "mealTogether": true
+    },
+    "content": [
+      "나가서 밥먹기 - 가츠맘",
+      "음료 한잔씩 사주기",
+      "4층에서 모임"
+    ],
+    "photos": [
+      "/assets/마을 모임/02 18/240218_(1).jpg",
+      "/assets/마을 모임/02 18/240218_(2).jpg",
+      "/assets/마을 모임/02 18/240218_(3).jpg"
+    ]
+  },
+  {
+    "date": "02.25",
+    "attendees": ["건범", "민재", "민지", "서진", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": true,
+      "mealTogether": false
+    },
+    "content": [
+      "예배 및 마을 모임",
+      "2월 회고 시간",
+      "3월 계획 세우기"
+    ],
+    "photos": [
+      "/assets/마을 모임/02 25/240225_(1).jpg",
+      "/assets/마을 모임/02 25/240225_(2).jpg"
+    ]
+  },
+  {
+    "date": "03.03",
+    "attendees": ["건범", "민지", "서진", "주원", "지영", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": true,
+      "bibleBrought": true,
+      "mealTogether": false
+    },
+    "content": [
+      "3월 첫 모임",
+      "봄맞이 마을 활동 계획",
+      "함께 기도하는 시간"
+    ],
+    "photos": [
+      "/assets/마을 모임/03 03/240303_(1).jpg"
+    ]
+  },
+  {
+    "date": "03.10",
+    "attendees": ["건범", "민지", "서진", "예림", "주원", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": true
+    },
+    "content": [
+      "예배 후 함께 식사",
+      "마을원들과 깊은 대화",
+      "서로를 위한 기도"
+    ],
+    "photos": [
+      "/assets/마을 모임/03 10/240310_(1).jpg",
+      "/assets/마을 모임/03 10/240310_(2).jpg"
+    ]
+  },
+  {
+    "date": "03.17",
+    "attendees": ["건범", "민재", "민지", "예림", "주원", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": true,
+      "mealTogether": false
+    },
+    "content": [
+      "예배 및 마을 모임",
+      "한 주간의 감사 나누기",
+      "다음 활동 계획"
+    ],
+    "photos": [
+      "/assets/마을 모임/03 17/240317_(1).jpg",
+      "/assets/마을 모임/03 17/240317_(2).jpg"
+    ]
+  },
+  {
+    "date": "03.24",
+    "attendees": ["건범", "민지", "서진", "예림", "주원", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "예배 및 마을 모임",
+      "3월 마지막 모임",
+      "4월 계획 세우기"
+    ],
+    "photos": [
+      "/assets/마을 모임/03 24/240324_(1).jpg"
+    ]
+  },
+  {
+    "date": "03.31",
+    "attendees": ["민지", "서진", "예림", "주원", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": true
+    },
+    "content": [
+      "3월 마무리 모임",
+      "함께 식사하며 나눔",
+      "봄 나들이 계획"
+    ],
+    "photos": [
+      "/assets/마을 모임/03 31/240331_(1).jpg",
+      "/assets/마을 모임/03 31/240331_(2).jpg"
+    ]
+  },
+  {
+    "date": "04.07",
+    "attendees": ["건범", "민지", "서진", "예림", "주원", "지민", "지영", "찬규", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": true
+    },
+    "content": [
+      "4월 첫 모임",
+      "새로운 마을원 환영",
+      "함께 식사하며 친목"
+    ],
+    "photos": [
+      "/assets/마을 모임/04 07/240407_(1).jpg",
+      "/assets/마을 모임/04 07/240407_(2).jpg",
+      "/assets/마을 모임/04 07/240407_(3).jpg"
+    ]
+  },
+  {
+    "date": "04.14",
+    "attendees": ["건범", "민재", "민지", "예림", "주원", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": true
+    },
+    "content": [
+      "예배 후 마을 모임",
+      "함께 식사",
+      "주간 나눔 시간"
+    ],
+    "photos": [
+      "/assets/마을 모임/04 14/240414_(1).jpg"
+    ]
+  },
+  {
+    "date": "04.21",
+    "attendees": ["건범", "민지", "서진", "예림", "주원", "지민", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": true
+    },
+    "content": [
+      "건범이 생일 축하",
+      "케이크와 함께 축하",
+      "즐거운 마을 모임"
+    ],
+    "photos": [
+      "/assets/마을 모임/04 21/240421_(1).jpg",
+      "/assets/마을 모임/04 21/240421_(2).jpg"
+    ]
+  },
+  {
+    "date": "04.28",
+    "attendees": ["건범", "민지", "서진", "예림", "주원", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "4월 마지막 모임",
+      "5월 계획 논의",
+      "기도 제목 나누기"
+    ],
+    "photos": [
+      "/assets/마을 모임/04 28/240428_(1).jpg"
+    ]
+  },
+  {
+    "date": "05.05",
+    "attendees": ["민재", "민지", "예림", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "어린이날 모임",
+      "예배 및 나눔",
+      "감사의 시간"
+    ],
+    "photos": []
+  },
+  {
+    "date": "05.12",
+    "attendees": ["민지", "예림", "주원", "지민", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "5월 둘째 주 모임",
+      "예배 및 교제",
+      "서로를 위한 기도"
+    ],
+    "photos": [
+      "/assets/마을 모임/5 12/240512_(1).jpg",
+      "/assets/마을 모임/5 12/240512_(2).jpg"
+    ]
+  },
+  {
+    "date": "05.19",
+    "attendees": ["민지", "지영", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": true
+    },
+    "content": [
+      "소규모 모임",
+      "깊은 대화와 나눔",
+      "함께 식사"
+    ],
+    "photos": [
+      "/assets/마을 모임/5 19/240519_(1).jpg"
+    ]
+  },
+  {
+    "date": "05.26",
+    "attendees": ["건범", "민재", "민지", "서진", "예림", "주원", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": true
+    },
+    "content": [
+      "5월 마지막 모임",
+      "함께 식사",
+      "6월 계획 세우기"
+    ],
+    "photos": [
+      "/assets/마을 모임/5 26/240526_(1).jpg",
+      "/assets/마을 모임/5 26/240526_(2).jpg"
+    ]
+  },
+  {
+    "date": "06.02",
+    "attendees": ["민지", "지민", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "6월 첫 모임",
+      "예배 및 나눔",
+      "기도 시간"
+    ],
+    "photos": [
+      "/assets/마을 모임/06 02/240602_(1).jpg"
+    ]
+  },
+  {
+    "date": "06.09",
+    "attendees": ["태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": true
+    },
+    "content": [
+      "개인 묵상 시간",
+      "기도와 말씀"
+    ],
+    "photos": [
+      "/assets/마을 모임/06 09/240609_(1).jpg"
+    ]
+  },
+  {
+    "date": "06.16",
+    "attendees": ["민지", "지민", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "예배 및 마을 모임",
+      "주간 나눔"
+    ],
+    "photos": []
+  },
+  {
+    "date": "06.23",
+    "attendees": ["민지", "서진", "예림", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": true
+    },
+    "content": [
+      "예배 후 함께 식사",
+      "여름 계획 논의",
+      "기도 제목 나누기"
+    ],
+    "photos": [
+      "/assets/마을 모임/06 23/240623_(1).jpg",
+      "/assets/마을 모임/06 23/240623_(2).jpg"
+    ]
+  },
+  {
+    "date": "06.30",
+    "attendees": ["민지", "예림", "지민", "지영", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "6월 마지막 모임",
+      "상반기 회고",
+      "7월 계획"
+    ],
+    "photos": []
+  },
+  {
+    "date": "07.07",
+    "attendees": ["민재", "민지", "서진", "예림", "지영"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "7월 첫 모임",
+      "예배 및 교제",
+      "여름 활동 계획"
+    ],
+    "photos": [
+      "/assets/마을 모임/07 07/240707_(1).jpg"
+    ]
+  },
+  {
+    "date": "07.14",
+    "attendees": ["민재", "민지", "서진", "예림", "지영", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "예배 및 마을 모임",
+      "지영이 생일 축하",
+      "즐거운 시간"
+    ],
+    "photos": [
+      "/assets/마을 모임/07 14/240714_(1).jpg",
+      "/assets/마을 모임/07 14/240714_(2).jpg"
+    ]
+  },
+  {
+    "date": "08.15~08.17",
+    "attendees": ["건범", "민재", "서진", "예림", "지영", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "여름 수련회",
+      "2박 3일 함께 보내기",
+      "은혜와 감동의 시간",
+      "깊은 교제와 나눔"
+    ],
+    "photos": [
+      "/assets/마을 모임/08 15~08 17 여름 수련회/240815_(1).jpg",
+      "/assets/마을 모임/08 15~08 17 여름 수련회/240815_(2).jpg",
+      "/assets/마을 모임/08 15~08 17 여름 수련회/240815_(3).jpg"
+    ]
+  },
+  {
+    "date": "09.01",
+    "attendees": ["건범", "민지", "서진", "예림", "지민", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": true,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "9월 첫 모임",
+      "하반기 시작",
+      "새로운 각오"
+    ],
+    "photos": [
+      "/assets/마을 모임/09 01/240901_(1).jpg"
+    ]
+  },
+  {
+    "date": "09.22",
+    "attendees": [],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "태양이 생일",
+      "축하 시간"
+    ],
+    "photos": [
+      "/assets/마을 모임/09 22/240922_(1).jpg"
+    ]
+  },
+  {
+    "date": "10.20",
+    "attendees": ["민재", "민지", "서진", "지영", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "가을 모임",
+      "예배 및 나눔"
+    ],
+    "photos": [
+      "/assets/마을 모임/10 20/241020_(1).jpg"
+    ]
+  },
+  {
+    "date": "10.27",
+    "attendees": [],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "예배 및 마을 모임"
+    ],
+    "photos": [
+      "/assets/마을 모임/10 27/241027_(1).jpg"
+    ]
+  },
+  {
+    "date": "11.10",
+    "attendees": ["민지", "예림", "주원", "지영", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "11월 모임",
+      "예배 및 교제",
+      "감사의 시간"
+    ],
+    "photos": [
+      "/assets/마을 모임/11 10/241110_(1).jpg"
+    ]
+  },
+  {
+    "date": "12.01",
+    "attendees": ["민재", "민지", "예림", "지영", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "12월 첫 모임",
+      "한 해 마무리 준비",
+      "감사 나누기"
+    ],
+    "photos": []
+  },
+  {
+    "date": "12.08",
+    "attendees": ["건범", "민재", "민지", "서진", "예림", "지영", "태양"],
+    "activities": {
+      "earlyArrival": true,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "예배 및 마을 모임",
+      "2024년 회고",
+      "함께한 시간 돌아보기"
+    ],
+    "photos": []
+  },
+  {
+    "date": "12.22",
+    "attendees": ["민지", "서진", "지영", "태양"],
+    "activities": {
+      "earlyArrival": false,
+      "photoTaken": false,
+      "bibleBrought": false,
+      "mealTogether": false
+    },
+    "content": [
+      "크리스마스 전 모임",
+      "한 해 감사",
+      "새해 계획"
+    ],
+    "photos": [
+      "/assets/마을 모임/12 22/241222_(1).jpg"
+    ]
+  }
+]

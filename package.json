@@ -1,0 +1,16 @@
+{
+  "name": "taeyang-village",
+  "version": "1.0.0",
+  "description": "태양 마을 - Sun Village Community Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["village", "community", "church"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
