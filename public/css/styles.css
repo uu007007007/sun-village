@@ -2235,3 +2235,88 @@ body.dark-mode .meeting-attendees-count {
 body.dark-mode .theme-toggle {
     background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
 }
+
+/* Prayer Topics Styles */
+.prayer-person {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--color-background);
+    border-radius: 12px;
+    border-left: 4px solid var(--color-primary);
+}
+
+.prayer-person:last-child {
+    margin-bottom: 0;
+}
+
+.prayer-person-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.prayer-person-name::before {
+    content: "🙏";
+    margin-right: 0.5rem;
+    font-size: 1.1em;
+}
+
+.prayer-list-detail {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prayer-list-detail li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    color: var(--color-text-light);
+}
+
+.prayer-list-detail li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.prayer-list-detail li:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Dark mode for prayer topics */
+body.dark-mode .prayer-person {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--color-accent);
+}
+
+body.dark-mode .prayer-person-name {
+    color: var(--color-text-dark);
+}
+
+body.dark-mode .prayer-list-detail li {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+body.dark-mode .prayer-list-detail li::before {
+    color: var(--color-accent);
+}
+
+body.dark-mode .prayer-list-detail li:not(:last-child) {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal image styling */
+.modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+}

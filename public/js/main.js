@@ -40,6 +40,11 @@ function showPage(pageName) {
     if (pageName === 'home' || pageName === 'activities') {
         displayMeetingsTimeline();
     }
+
+    // Reload prayers timeline when switching to prayer page
+    if (pageName === 'prayer') {
+        displayPrayersTimeline();
+    }
 }
 
 // Handle navigation clicks
@@ -571,9 +576,159 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Prayer topics data and functions
+let prayersData = [];
+
+async function loadPrayers() {
+    try {
+        const response = await fetch('/data/prayers.json');
+        prayersData = await response.json();
+        displayPrayersTimeline();
+    } catch (error) {
+        console.error('기도 제목 데이터를 불러오는데 실패했습니다:', error);
+    }
+}
+
+function displayPrayersTimeline() {
+    const timeline = document.getElementById('prayersTimeline');
+    if (!timeline) return;
+
+    timeline.innerHTML = '';
+
+    if (!prayersData || prayersData.length === 0) {
+        timeline.innerHTML = '<p style="text-align: center; color: #666;">기도 제목이 없습니다.</p>';
+        return;
+    }
+
+    // Reverse to show most recent first
+    const reversedPrayers = [...prayersData].reverse();
+
+    reversedPrayers.forEach((prayer, index) => {
+        const card = document.createElement('div');
+        card.className = 'meeting-date-card';
+
+        const hasPrayers = prayer.prayers && prayer.prayers.length > 0;
+        const hasImage = prayer.image;
+
+        // Create preview or placeholder
+        let previewHTML = '';
+        if (hasImage) {
+            card.classList.add('has-photos');
+            // Convert relative path to absolute
+            const imagePath = `/개인 페이지 & 공유된 페이지/태양 마을☀️/기도 제목/${prayer.image}`;
+            previewHTML = `
+                <div class="card-preview-image" style="background-image: url('${imagePath}')"></div>
+            `;
+        } else {
+            previewHTML = `
+                <div class="card-date-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7-7 7 7"/>
+                        <path d="M12 5c-2 0-4 2-4 4v6c0 1 .5 2 1 2s1-1 1-2v-3"/>
+                        <path d="M12 5c2 0 4 2 4 4v6c0 1-.5 2-1 2s-1-1-1-2v-3"/>
+                    </svg>
+                </div>
+            `;
+        }
+
+        // Count total prayers
+        let totalPrayersCount = 0;
+        if (hasPrayers) {
+            prayer.prayers.forEach(p => {
+                totalPrayersCount += p.prayers.length;
+            });
+        }
+
+        // Create card content
+        card.innerHTML = `
+            ${previewHTML}
+            <div class="card-info">
+                <div class="card-date">${prayer.date.replace(' 기도', '').replace('제목', '')}</div>
+                ${hasPrayers ? `
+                    <div class="card-meta">
+                        <span class="card-meta-item">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            ${prayer.prayers.length}명
+                        </span>
+                        <span class="card-meta-item">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12l7-7 7 7"/>
+                            </svg>
+                            ${totalPrayersCount}개
+                        </span>
+                    </div>
+                ` : '<div class="card-placeholder">기도제목 없음</div>'}
+            </div>
+        `;
+
+        if (hasPrayers) {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', () => openPrayerModal(prayer));
+        }
+
+        timeline.appendChild(card);
+    });
+}
+
+function openPrayerModal(prayer) {
+    const modal = document.getElementById('meetingModal');
+    const modalBody = document.getElementById('modalBody');
+
+    let prayersHTML = '';
+    if (prayer.prayers && prayer.prayers.length > 0) {
+        prayer.prayers.forEach(person => {
+            prayersHTML += `
+                <div class="prayer-person">
+                    <h4 class="prayer-person-name">${person.name}</h4>
+                    <ul class="prayer-list-detail">
+                        ${person.prayers.map(p => `<li>${p}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        });
+    }
+
+    let imageHTML = '';
+    if (prayer.image) {
+        const imagePath = `/개인 페이지 & 공유된 페이지/태양 마을☀️/기도 제목/${prayer.image}`;
+        imageHTML = `
+            <div class="modal-media-section">
+                <h4>기도제목 사진</h4>
+                <div class="modal-media-grid">
+                    <img src="${imagePath}" alt="기도제목" class="modal-image">
+                </div>
+            </div>
+        `;
+    }
+
+    modalBody.innerHTML = `
+        <div class="modal-header">
+            <div class="modal-date">${prayer.date.replace(' 기도', '').replace('제목', '')}</div>
+            <h3 class="modal-title">기도 제목</h3>
+            <div class="modal-subtitle">${prayer.fullDate.replace('@', '')}</div>
+        </div>
+
+        <div class="modal-content-section">
+            <h4>기도 제목</h4>
+            ${prayersHTML || '<p>기록된 기도 제목이 없습니다.</p>'}
+        </div>
+
+        ${imageHTML}
+    `;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
 // Load meetings on page load
 document.addEventListener('DOMContentLoaded', () => {
     loadMeetings();
+    loadPrayers();
 });
 
 // Dark Mode Toggle
