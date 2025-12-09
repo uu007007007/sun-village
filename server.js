@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 3000;
 
 // Serve static files from public directory
 app.use(express.static('public'));
-app.use('/assets', express.static('개인 페이지 & 공유된 페이지/태양 마을☀️'));
 
 // Main route
 app.get('/', (req, res) => {
