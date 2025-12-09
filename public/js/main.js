@@ -35,6 +35,11 @@ function showPage(pageName) {
     } else {
         navbar.classList.add('on-white-page');
     }
+
+    // Reload meetings timeline when switching to home or activities page
+    if (pageName === 'home' || pageName === 'activities') {
+        displayMeetingsTimeline();
+    }
 }
 
 // Handle navigation clicks
@@ -212,63 +217,66 @@ function loadMeetings() {
 }
 
 function displayMeetingsTimeline() {
-    const timeline = document.getElementById('meetingsTimeline');
-    if (!timeline) return;
+    // Get all timeline elements (there might be multiple on different pages)
+    const timelines = document.querySelectorAll('[id="meetingsTimeline"]');
+    if (timelines.length === 0) return;
 
-    timeline.innerHTML = '';
+    timelines.forEach(timeline => {
+        timeline.innerHTML = '';
 
-    meetingsData.forEach((meeting, index) => {
-        const card = document.createElement('div');
-        card.className = 'meeting-date-card';
+        meetingsData.forEach((meeting, index) => {
+            const card = document.createElement('div');
+            card.className = 'meeting-date-card';
 
-        const hasContent = meeting.content && meeting.content.length > 0;
-        const hasRichContent = meeting.richContent && meeting.richContent.length > 0;
+            const hasContent = meeting.content && meeting.content.length > 0;
+            const hasRichContent = meeting.richContent && meeting.richContent.length > 0;
 
-        // Filter out videos to get only photos
-        const photos = meeting.photos ? meeting.photos.filter(p => !p.match(/\.(mp4|mov|avi)$/i)) : [];
-        const hasPhotos = photos.length > 0;
+            // Filter out videos to get only photos
+            const photos = meeting.photos ? meeting.photos.filter(p => !p.match(/\.(mp4|mov|avi)$/i)) : [];
+            const hasPhotos = photos.length > 0;
 
-        // Use the title from meetingsData
-        const meetingTitle = meeting.title || '마을 모임';
+            // Use the title from meetingsData
+            const meetingTitle = meeting.title || '마을 모임';
 
-        // Create preview image or placeholder
-        let previewHTML = '';
-        if (hasPhotos) {
-            card.classList.add('has-photos');
-            previewHTML = `
-                <div class="card-preview-image" style="background-image: url('${photos[0]}')">
-                    <div class="card-photo-count">${photos.length}장</div>
+            // Create preview image or placeholder
+            let previewHTML = '';
+            if (hasPhotos) {
+                card.classList.add('has-photos');
+                previewHTML = `
+                    <div class="card-preview-image" style="background-image: url('${photos[0]}')">
+                        <div class="card-photo-count">${photos.length}장</div>
+                    </div>
+                `;
+            } else {
+                // Use default background image for cards without photos
+                previewHTML = `
+                    <div class="card-preview-image" style="background-image: url('/assets/default-meeting-bg.png')">
+                    </div>
+                `;
+            }
+
+            card.innerHTML = `
+                ${previewHTML}
+                <div class="card-info">
+                    <div class="meeting-date">${meeting.date}</div>
+                    <div class="meeting-title">${meetingTitle}</div>
+                    ${meeting.attendees.length > 0 ? `<div class="meeting-attendees-count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>${meeting.attendees.length}명 참석</div>` : ''}
                 </div>
             `;
-        } else {
-            // Use default background image for cards without photos
-            previewHTML = `
-                <div class="card-preview-image" style="background-image: url('/assets/default-meeting-bg.png')">
-                </div>
-            `;
-        }
 
-        card.innerHTML = `
-            ${previewHTML}
-            <div class="card-info">
-                <div class="meeting-date">${meeting.date}</div>
-                <div class="meeting-title">${meetingTitle}</div>
-                ${meeting.attendees.length > 0 ? `<div class="meeting-attendees-count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>${meeting.attendees.length}명 참석</div>` : ''}
-            </div>
-        `;
+            card.addEventListener('click', () => openMeetingModal(meeting));
 
-        card.addEventListener('click', () => openMeetingModal(meeting));
+            // Staggered animation
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 30);
 
-        // Staggered animation
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, index * 30);
-
-        timeline.appendChild(card);
+            timeline.appendChild(card);
+        });
     });
 }
 
