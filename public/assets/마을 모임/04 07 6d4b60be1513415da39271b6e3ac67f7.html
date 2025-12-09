@@ -1,0 +1,714 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>04.07</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6d4b60be-1513-415d-a392-71b6e3ac67f7" class="page sans"><header><h1 class="page-title" dir="auto">04.07</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>15분 전에 도착하기</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>사진 찍기</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>성경 챙겨오기</th><td><div class="checkbox checkbox-off"></div></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>밥 같이 먹기</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/groups_gray.svg" style="width:14px;height:14px;display:block"/></span>마을 모임 참석 인원</th><td><span class="selected-value select-value-color-orange">건범</span><span class="selected-value select-value-color-green">민지</span><span class="selected-value select-value-color-pink">서진</span><span class="selected-value select-value-color-blue">예림</span><span class="selected-value select-value-color-default">주원</span><span class="selected-value select-value-color-gray">지민</span><span class="selected-value select-value-color-purple">지영</span><span class="selected-value select-value-color-gray">찬규</span><span class="selected-value select-value-color-brown">태양</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="cd74c0c3-0ba4-4d8c-81bf-37a21d30e850" class="image"><a href="04%2007/KakaoTalk_20240407_202247834_06.jpg"><img style="width:4032px" src="04%2007/KakaoTalk_20240407_202247834_06.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h1 id="ca098b7f-926b-4ce2-bb75-f3753b6d9511" class="">태양 마을 첫 피크닉-!!</h1></div><div style="display:contents" dir="auto"><p id="fb13b7a8-30ab-4f71-8b81-1ba633c903dd" class="">날씨가 많이 좋아져서 봄이 온김에 처음으로 다같이 나간 피크닉!!</p></div><div style="display:contents" dir="auto"><p id="c52b3dce-4aee-4b20-911a-665b46087139" class="">오늘은 군대에서 휴가나온 찬규와 마을에 새로 합류하게 된 지민이가 같이 모임을 했습니다-! (feat. 오랜만에 올라온 지영이)<br/>예배 마치고 다같이 돗자리와 보드게임을 챙겨서 영흥공원으로 갔습니당</p></div><div style="display:contents" dir="auto"><p id="0df23d67-4672-41df-bce0-fc31da55302e" class="">그런데 그늘이 하나도 없어서 생각보다 강렬한 햇빛에 다같이 구워졌던… 해가 있을땐 덥고, 해가 지니까 또 춥고😫</p></div><div style="display:contents" dir="auto"><p id="aea8dc93-a314-4276-b30e-0fce575d1195" class="">그래도 엽떡에 허니콤보는 역대급으로 맛있었다 ㅠ</p></div><div style="display:contents" dir="auto"><p id="97f33e9f-5a38-4da8-a145-66b91244dacf" class="">사람도 가장 많이 모인날이라 자리도 좁고 음료수도 쏟고(주원) 정신없었지만 맛있게 밥을 먹고 즐거운 시간을 보냈습니당</p></div><div style="display:contents" dir="auto"><p id="244f0059-ea4c-463e-8e94-f3973d6eb54b" class="">다같이 하려고 보드게임도 챙겼는데 막상 자리가 애매해서 가져간 보드게임은 안하고, 라이어게임이랑 마피아 게임 하기-!</p></div><div style="display:contents" dir="auto"><p id="103f381f-68cc-44a9-9f1b-bac735a7de2e" class="">건범이가 사준 메가커피도 다같이 맛있게 먹고, 재밌게 수다를 떨다가 해 지고 나서 사진을 찍고 마무리 했습니당</p></div><div style="display:contents" dir="auto"><p id="171fa34f-9ef6-4469-8c77-3475ab783f7d" class="">논 자리는 깔끔하게 뒷정리하고, 쓰레기와 돗자리, 보드게임은 교회로 잘 들고와서 정리했습니다~~</p></div><div style="display:contents" dir="auto"><p id="7bbe734d-9286-4703-8112-0fc9a21b5ed4" class="">6층에서 돗자리 정리하다가 튀어나와있던 구조물에 건범이가 머리를 부딪혀 머리가 찢어져서 피가 철철.. 건범이를 집까지 잘 데려다 주고 건범이는 바로 응급실에 가서 머리에 호치키스 빵빵빵😥</p></div><div style="display:contents" dir="auto"><p id="74f13e88-983d-44fc-9c69-0a9c5e17efa2" class="">다사다난 하고 시끌벅적했던 태양 마을 첫 피크닉 끝-!</p></div><div style="display:contents" dir="auto"><p id="0e3188c9-6d85-4a09-a40c-cca5e3cc796f" class="">이번 기회로 다들 더 친해질 수 있었던 것 같아 즐거웠습니다 :)</p></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="da8c08de-f401-4e19-83b6-282d8ecd0e83"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%"><strong>위로</strong> - 마을안에서 위로를 받고 마음의 안식처가 되었으면 좋겠다.<div style="display:contents" dir="auto"><p id="4ebc984c-3627-47ec-a55f-f12cc5568f87" class=""><strong>성숙</strong> - 한 해동안 마을 안에서 지내며 신앙적으로도 함께 성숙해 질 수 있는 마을이 되었으면 좋겠다.</p></div><div style="display:contents" dir="auto"><p id="eaf14707-d1c9-4a0e-8891-bb00a7ad8905" class=""><strong>사랑</strong> - 우리 마을 안에서는 항상 서로 사랑하고, 아껴주는 관계가 형성되면 좋겠다.</p></div><div style="display:contents" dir="auto"><p id="69245d61-3f7c-4ba2-a0b7-65a61712e71f" class=""><strong>재미</strong> - 무엇보다도 이 관계가 부담스럽지 않고, 마을 사람들과 함께하는 모든 시간이 편안하고 즐거운 시간이면 좋겠다.</p></div></div></figure></div><div style="display:contents" dir="auto"><p id="9b7b123f-d657-4ce6-9359-72ae630a3e81" class="">무엇보다 마을원들이 마을모임을 하고 교제하면서 많이 치유가 되고, 재미를 느끼게 된 같아서 정말 행복하고 감사합니다😊</p></div><div style="display:contents" dir="auto"><p id="18eefeea-2875-4f8d-9e42-b22f09160c28" class="">앞으로도 태양마을이 지금보다도 관계가 더 깊어져서 어려운 마음들도 함께 나누어 치유받고, 신앙의 진지함을 가지고 신앙적으로도 성장할 수 있는 계기가 되길 희망합니다</p></div><div style="display:contents" dir="auto"><hr id="857c9bea-2625-434d-a5a8-ea0ac63035ae"/></div><div style="display:contents" dir="auto"><div id="8394a72d-846e-4c2f-b526-b7fc44cb3a66" class="column-list"><div style="display:contents" dir="auto"><div id="54bdfe47-d9ba-431e-b7d7-657d0299fecc" style="width:50.000000000000014%" class="column"><div style="display:contents" dir="ltr"><figure id="4119a3d4-e036-43bf-ac62-270e9e503a2a" class="image"><a href="04%2007/KakaoTalk_20240407_202247834_05.jpg"><img style="width:4032px" src="04%2007/KakaoTalk_20240407_202247834_05.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="48815cc2-1996-46ed-a99a-455d4cbecf5d" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="d39074a4-ea65-413a-b064-8abb2d8d2b7d" class="image"><a href="04%2007/KakaoTalk_20240407_202247834_04.jpg"><img style="width:4032px" src="04%2007/KakaoTalk_20240407_202247834_04.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="435154c8-80c2-4aed-b41a-b2e666d90d55" class="column-list"><div style="display:contents" dir="auto"><div id="32525d93-2e09-4f81-a58a-b9304bdda675" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="3701c2f4-322c-41f4-8294-7a0b862525d5" class="image"><a href="04%2007/KakaoTalk_20240407_202112556_01.jpg"><img style="width:4032px" src="04%2007/KakaoTalk_20240407_202112556_01.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="c1333b89-6f2e-4738-bef8-354848c446c1" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="3fea7227-45a4-4c0e-b94e-e0a18fbf0978" class="image"><a href="04%2007/KakaoTalk_20240407_202112556.jpg"><img style="width:4032px" src="04%2007/KakaoTalk_20240407_202112556.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="263fd0bf-aee3-40a4-a541-3242a0bf71fa" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="65e077c2-fc1e-4780-8bd4-ebcb15decd15" class="image"><a href="04%2007/KakaoTalk_20240407_202112556_02.jpg"><img style="width:4032px" src="04%2007/KakaoTalk_20240407_202112556_02.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="ce5cb740-a2c9-4d0c-ab8b-0b25ad3c79ea" class="column-list"><div style="display:contents" dir="auto"><div id="c0d78994-682c-45da-b2bf-010bc4d59ba0" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="393b0ae6-21d7-480d-9d5c-8c96654f3ea9" class="image"><a href="04%2007/KakaoTalk_20240407_202247834_03.jpg"><img style="width:708px" src="04%2007/KakaoTalk_20240407_202247834_03.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="708cf9f5-ef9d-4e29-9b53-cb480d4ad598" style="width:33.333333333333336%" class="column"><div style="display:contents" dir="ltr"><figure id="64bd1461-4760-47dd-8ce7-8f21abaa4680" class="image"><a href="04%2007/KakaoTalk_20240407_202247834_02.jpg"><img style="width:708px" src="04%2007/KakaoTalk_20240407_202247834_02.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="0c6fb564-7df2-428d-a0d8-0da96fca6bc3" style="width:33.33333333333333%" class="column"><div style="display:contents" dir="ltr"><figure id="e9de2304-75b0-4af4-b69d-766afc437571" class="image"><a href="04%2007/KakaoTalk_20240407_202247834_01.jpg"><img style="width:708px" src="04%2007/KakaoTalk_20240407_202247834_01.jpg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="8da9cb76-7b54-49d3-b59c-d37a433177ff" class="column-list"><div style="display:contents" dir="auto"><div id="5c39f095-d3bd-40d6-8eb2-9db84dff389d" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="ea08e256-72b8-4c8b-ae48-ca7b088446b8" class="image"><a href="04%2007/KakaoTalk_20240407_202247834.jpg"><img style="width:4032px" src="04%2007/KakaoTalk_20240407_202247834.jpg"/></a></figure></div><div style="display:contents" dir="auto"><p id="37795578-1b40-4417-8e05-2c151bae899b" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="16dfca9d-96e8-49af-8499-f899babf4f55" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="ae76ffa1-6fc5-4c86-b31f-6fc62f50c880" class="image"><a href="04%2007/Untitled.png"><img style="width:1058px" src="04%2007/Untitled.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><div id="d84956a1-842e-42b2-8515-389420e78b12" class="column-list"><div style="display:contents" dir="auto"><div id="b55d0176-dcac-4bec-8413-b7550de5a339" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="6a46d40a-eccf-4a23-844c-3e959d25f266" class="image"><a href="04%2007/KakaoTalk_20240407_233654419.jpg"><img style="width:4284px" src="04%2007/KakaoTalk_20240407_233654419.jpg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="da74a7a9-7516-4ba7-b11b-beaf6d48b85f" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="128a8d60-5e83-43ac-9f07-f5cb7dafd724" class="image"><a href="04%2007/KakaoTalk_20240407_233654419_01.jpg"><img style="width:3024px" src="04%2007/KakaoTalk_20240407_233654419_01.jpg"/></a></figure></div></div></div></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
