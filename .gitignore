@@ -43,8 +43,4 @@ __pycache__/
 *.so
 .Python
 
-# Large media files (exceeds GitHub 100MB limit)
-*.mov
-*.mp4
-*.avi
-*.mkv
+# Note: Large video files are now managed by Git LFS (see .gitattributes)
