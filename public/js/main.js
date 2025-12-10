@@ -666,7 +666,8 @@ function displayPrayersTimeline() {
             </div>
         `;
 
-        if (hasPrayers) {
+        // Make card clickable if there are prayers or an image
+        if (hasPrayers || hasImage) {
             card.style.cursor = 'pointer';
             card.addEventListener('click', () => openPrayerModal(prayer));
         }
