@@ -614,8 +614,8 @@ function displayPrayersTimeline() {
         let previewHTML = '';
         if (hasImage) {
             card.classList.add('has-photos');
-            // Convert relative path to absolute
-            const imagePath = `/개인 페이지 & 공유된 페이지/태양 마을☀️/기도 제목/${prayer.image}`;
+            // Use the image path directly from JSON
+            const imagePath = prayer.image;
             previewHTML = `
                 <div class="card-preview-image" style="background-image: url('${imagePath}')"></div>
             `;
@@ -695,7 +695,8 @@ function openPrayerModal(prayer) {
 
     let imageHTML = '';
     if (prayer.image) {
-        const imagePath = `/개인 페이지 & 공유된 페이지/태양 마을☀️/기도 제목/${prayer.image}`;
+        // Use the image path directly from JSON
+        const imagePath = prayer.image;
         imageHTML = `
             <div class="modal-media-section">
                 <h4>기도제목 사진</h4>
