@@ -2320,3 +2320,55 @@ body.dark-mode .prayer-list-detail li:not(:last-child) {
     border-radius: 8px;
     box-shadow: var(--shadow-lg);
 }
+
+/* Prayer Card Styles */
+.card-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.card-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.9;
+}
+
+.card-placeholder {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+/* Dark mode for prayer cards */
+body.dark-mode .card-date {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .card-meta-item {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+body.dark-mode .card-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
