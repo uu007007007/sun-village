@@ -247,8 +247,9 @@ function displayMeetingsTimeline() {
             let previewHTML = '';
             if (hasPhotos) {
                 card.classList.add('has-photos');
+                const encodedPhotoUrl = encodeURI(photos[0]);
                 previewHTML = `
-                    <div class="card-preview-image" style="background-image: url('${photos[0]}')">
+                    <div class="card-preview-image" style="background-image: url('${encodedPhotoUrl}')">
                         <div class="card-photo-count">${photos.length}장</div>
                     </div>
                 `;
@@ -370,11 +371,12 @@ function openMeetingModal(meeting) {
                 <div class="modal-photos">
                     ${meeting.photos.map(photo => {
                         const isVideo = photo.match(/\.(mp4|mov|avi)$/i);
+                        const encodedPhoto = encodeURI(photo);
                         if (isVideo) {
                             return `
                                 <div class="modal-photo modal-video">
                                     <video controls preload="metadata">
-                                        <source src="${photo}" type="video/mp4">
+                                        <source src="${encodedPhoto}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
@@ -382,7 +384,7 @@ function openMeetingModal(meeting) {
                         } else {
                             return `
                                 <div class="modal-photo">
-                                    <img src="${photo}" alt="마을 모임 사진" loading="lazy" onerror="this.parentElement.style.display='none'">
+                                    <img src="${encodedPhoto}" alt="마을 모임 사진" loading="lazy" onerror="this.parentElement.style.display='none'">
                                 </div>
                             `;
                         }
@@ -490,6 +492,7 @@ function displayCurrentMedia(isInitial = false) {
     const content = document.getElementById('mediaPreviewContent');
     const counter = document.getElementById('mediaPreviewCounter');
     const mediaUrl = currentMediaList[currentMediaIndex];
+    const encodedMediaUrl = encodeURI(mediaUrl);
 
     const isVideo = mediaUrl.match(/\.(mp4|mov|avi)$/i);
 
@@ -499,12 +502,12 @@ function displayCurrentMedia(isInitial = false) {
     if (isVideo) {
         content.innerHTML = `
             <video controls autoplay>
-                <source src="${mediaUrl}" type="video/mp4">
+                <source src="${encodedMediaUrl}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         `;
     } else {
-        content.innerHTML = `<img src="${mediaUrl}" alt="미디어 미리보기">`;
+        content.innerHTML = `<img src="${encodedMediaUrl}" alt="미디어 미리보기">`;
     }
 
     counter.textContent = `${currentMediaIndex + 1} / ${currentMediaList.length}`;
