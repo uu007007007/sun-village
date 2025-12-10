@@ -679,8 +679,11 @@ function openPrayerModal(prayer) {
     const modal = document.getElementById('meetingModal');
     const modalBody = document.getElementById('modalBody');
 
+    const hasPrayers = prayer.prayers && prayer.prayers.length > 0;
+    const hasImage = prayer.image;
+
     let prayersHTML = '';
-    if (prayer.prayers && prayer.prayers.length > 0) {
+    if (hasPrayers) {
         prayer.prayers.forEach(person => {
             prayersHTML += `
                 <div class="prayer-person">
@@ -694,7 +697,7 @@ function openPrayerModal(prayer) {
     }
 
     let imageHTML = '';
-    if (prayer.image) {
+    if (hasImage) {
         // Use the image path directly from JSON
         const imagePath = prayer.image;
         imageHTML = `
@@ -707,6 +710,31 @@ function openPrayerModal(prayer) {
         `;
     }
 
+    // Build modal content based on what's available
+    let contentSections = '';
+
+    // Only show prayer content section if there are prayers
+    if (hasPrayers) {
+        contentSections += `
+            <div class="modal-content-section">
+                <h4>기도 제목</h4>
+                ${prayersHTML}
+            </div>
+        `;
+    }
+
+    // Add image section if it exists
+    contentSections += imageHTML;
+
+    // If there's no content at all, show a message
+    if (!hasPrayers && !hasImage) {
+        contentSections = `
+            <div class="modal-content-section">
+                <p style="text-align: center; color: #999; padding: 2rem;">기록된 내용이 없습니다.</p>
+            </div>
+        `;
+    }
+
     modalBody.innerHTML = `
         <div class="modal-header">
             <div class="modal-date">${prayer.date.replace(' 기도', '').replace('제목', '')}</div>
@@ -714,12 +742,7 @@ function openPrayerModal(prayer) {
             <div class="modal-subtitle">${prayer.fullDate.replace('@', '')}</div>
         </div>
 
-        <div class="modal-content-section">
-            <h4>기도 제목</h4>
-            ${prayersHTML || '<p>기록된 기도 제목이 없습니다.</p>'}
-        </div>
-
-        ${imageHTML}
+        ${contentSections}
     `;
 
     modal.classList.add('active');
