@@ -631,38 +631,11 @@ function displayPrayersTimeline() {
             `;
         }
 
-        // Count total prayers
-        let totalPrayersCount = 0;
-        if (hasPrayers) {
-            prayer.prayers.forEach(p => {
-                totalPrayersCount += p.prayers.length;
-            });
-        }
-
-        // Create card content
+        // Create card content - only show date
         card.innerHTML = `
             ${previewHTML}
             <div class="card-info">
-                <div class="card-date">${prayer.date.replace(' 기도', '').replace('제목', '')}</div>
-                ${hasPrayers ? `
-                    <div class="card-meta">
-                        <span class="card-meta-item">
-                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                            ${prayer.prayers.length}명
-                        </span>
-                        <span class="card-meta-item">
-                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 5v14M5 12l7-7 7 7"/>
-                            </svg>
-                            ${totalPrayersCount}개
-                        </span>
-                    </div>
-                ` : '<div class="card-placeholder">기도제목 없음</div>'}
+                <div class="card-date">${prayer.date}</div>
             </div>
         `;
 
