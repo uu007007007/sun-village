@@ -41,8 +41,8 @@ function showPage(pageName) {
         displayMeetingsTimeline();
     }
 
-    // Reload prayers timeline when switching to prayer page
-    if (pageName === 'prayer') {
+    // Reload prayers timeline when switching to home or prayer page
+    if (pageName === 'home' || pageName === 'prayer') {
         displayPrayersTimeline();
     }
 }
@@ -590,20 +590,24 @@ async function loadPrayers() {
 }
 
 function displayPrayersTimeline() {
-    const timeline = document.getElementById('prayersTimeline');
-    if (!timeline) return;
-
-    timeline.innerHTML = '';
+    // Get all prayer timeline elements (there might be multiple on different pages)
+    const timelines = document.querySelectorAll('[id="prayersTimeline"], [id="homePrayersTimeline"]');
+    if (timelines.length === 0) return;
 
     if (!prayersData || prayersData.length === 0) {
-        timeline.innerHTML = '<p style="text-align: center; color: #666;">기도 제목이 없습니다.</p>';
+        timelines.forEach(timeline => {
+            timeline.innerHTML = '<p style="text-align: center; color: #666;">기도 제목이 없습니다.</p>';
+        });
         return;
     }
 
     // Reverse to show most recent first
     const reversedPrayers = [...prayersData].reverse();
 
-    reversedPrayers.forEach((prayer, index) => {
+    timelines.forEach(timeline => {
+        timeline.innerHTML = '';
+
+        reversedPrayers.forEach((prayer, index) => {
         const card = document.createElement('div');
         card.className = 'meeting-date-card';
 
@@ -645,7 +649,8 @@ function displayPrayersTimeline() {
             card.addEventListener('click', () => openPrayerModal(prayer));
         }
 
-        timeline.appendChild(card);
+            timeline.appendChild(card);
+        });
     });
 }
 
