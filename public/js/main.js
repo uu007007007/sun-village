@@ -282,16 +282,45 @@ function displayMeetingsTimeline() {
 
             card.addEventListener('click', () => openMeetingModal(meeting));
 
-            // Staggered animation
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            // Add card to DOM first
+            timeline.appendChild(card);
+
+            // Staggered animation with fallback for mobile
+            try {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+
+                // Force reflow
+                card.offsetHeight;
+
+                // Use requestAnimationFrame for better mobile support
+                const animate = () => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                };
+
+                if (typeof requestAnimationFrame !== 'undefined') {
+                    requestAnimationFrame(() => requestAnimationFrame(animate));
+                } else {
+                    // Fallback for older browsers
+                    setTimeout(animate, 50);
+                }
+
+                // Safety fallback: ensure card is visible after 1 second
+                setTimeout(() => {
+                    if (card.style.opacity !== '1') {
+                        console.warn('애니메이션 실패, 강제로 카드 표시');
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                }, 1000);
+            } catch (animError) {
+                // If animation fails, just show the card
+                console.error('애니메이션 에러:', animError);
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
-            }, index * 30);
-
-            timeline.appendChild(card);
+            }
         });
     });
         console.log('마을 모임 타임라인 표시 완료');
