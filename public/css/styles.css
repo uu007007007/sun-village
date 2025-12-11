@@ -1822,6 +1822,65 @@ body {
     .nav-link {
         font-size: 0.7rem;
     }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .meetings-timeline {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .meeting-date-card {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .meetings-timeline {
+        gap: var(--spacing-sm);
+    }
+
+    .meeting-date-card {
+        height: 200px;
+    }
+
+    .card-info {
+        padding: var(--spacing-sm);
+    }
+
+    .meeting-title {
+        font-size: 1rem;
+    }
+
+    .modal-body {
+        padding: var(--spacing-md);
+    }
+
+    .modal-date {
+        font-size: 1.75rem;
+    }
 }
 
 /* Smooth Entrance Animations */
