@@ -214,17 +214,27 @@ document.querySelectorAll('.bucket-item').forEach(item => {
 // meetingsData is loaded from meetingsData.js
 
 function loadMeetings() {
-    if (typeof meetingsData !== 'undefined' && meetingsData.length > 0) {
-        displayMeetingsTimeline();
-    } else {
-        console.error('마을 모임 데이터를 불러오는데 실패했습니다');
+    try {
+        if (typeof meetingsData !== 'undefined' && Array.isArray(meetingsData) && meetingsData.length > 0) {
+            console.log('마을 모임 데이터 로드 성공:', meetingsData.length, '개의 모임');
+            displayMeetingsTimeline();
+        } else {
+            console.error('마을 모임 데이터를 불러오는데 실패했습니다. meetingsData:', typeof meetingsData);
+        }
+    } catch (error) {
+        console.error('loadMeetings 에러:', error);
     }
 }
 
 function displayMeetingsTimeline() {
-    // Get all timeline elements (there might be multiple on different pages)
-    const timelines = document.querySelectorAll('[id="meetingsTimeline"], [id="homeMeetingsTimeline"]');
-    if (timelines.length === 0) return;
+    try {
+        // Get all timeline elements (there might be multiple on different pages)
+        const timelines = document.querySelectorAll('[id="meetingsTimeline"], [id="homeMeetingsTimeline"]');
+        console.log('Timeline 요소 찾음:', timelines.length, '개');
+        if (timelines.length === 0) {
+            console.warn('Timeline 요소를 찾을 수 없습니다');
+            return;
+        }
 
     timelines.forEach(timeline => {
         timeline.innerHTML = '';
@@ -284,6 +294,10 @@ function displayMeetingsTimeline() {
             timeline.appendChild(card);
         });
     });
+        console.log('마을 모임 타임라인 표시 완료');
+    } catch (error) {
+        console.error('displayMeetingsTimeline 에러:', error);
+    }
 }
 
 function openMeetingModal(meeting) {
@@ -733,8 +747,20 @@ function openPrayerModal(prayer) {
 
 // Load meetings on page load
 document.addEventListener('DOMContentLoaded', () => {
-    loadMeetings();
-    loadPrayers();
+    console.log('DOMContentLoaded 이벤트 발생');
+    console.log('meetingsData 타입:', typeof meetingsData);
+
+    // Ensure data is loaded before trying to display
+    if (typeof meetingsData === 'undefined') {
+        console.warn('meetingsData가 아직 로드되지 않았습니다. 재시도 중...');
+        setTimeout(() => {
+            loadMeetings();
+            loadPrayers();
+        }, 100);
+    } else {
+        loadMeetings();
+        loadPrayers();
+    }
 });
 
 // Dark Mode Toggle
