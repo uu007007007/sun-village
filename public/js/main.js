@@ -223,7 +223,7 @@ function loadMeetings() {
 
 function displayMeetingsTimeline() {
     // Get all timeline elements (there might be multiple on different pages)
-    const timelines = document.querySelectorAll('[id="meetingsTimeline"]');
+    const timelines = document.querySelectorAll('[id="meetingsTimeline"], [id="homeMeetingsTimeline"]');
     if (timelines.length === 0) return;
 
     timelines.forEach(timeline => {
