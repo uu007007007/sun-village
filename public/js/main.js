@@ -234,39 +234,26 @@ function displayMeetingsTimeline() {
 
         if (timelines.length === 0) {
             console.warn('Timeline 요소를 찾을 수 없습니다');
-            alert('⚠️ 타임라인 요소를 찾을 수 없습니다! DOM에 없습니다.');
             return;
         }
 
-        // CRITICAL: Hide all pages first, then show only home page
-        document.querySelectorAll('.page').forEach(page => {
-            page.style.display = 'none';
-        });
-
-        // Ensure home page is visible
-        const homePage = document.querySelector('[data-page-content="home"]');
-        if (homePage) {
-            homePage.classList.add('active');
-            homePage.style.display = 'block';
-        }
-
-        // Force sections and containers visible (minimal fix)
+        // Force sections and containers visible with !important
         const meetingsSections = document.querySelectorAll('.meetings-section');
         meetingsSections.forEach(section => {
-            section.style.display = 'block';
-            section.style.visibility = 'visible';
+            section.style.setProperty('display', 'block', 'important');
+            section.style.setProperty('visibility', 'visible', 'important');
         });
 
         const containers = document.querySelectorAll('.meetings-section .container');
         containers.forEach(container => {
-            container.style.display = 'block';
-            container.style.visibility = 'visible';
+            container.style.setProperty('display', 'block', 'important');
+            container.style.setProperty('visibility', 'visible', 'important');
         });
 
-        // Ensure timeline visibility
+        // Ensure timeline visibility with !important
         timelines.forEach(tl => {
-            tl.style.display = 'grid';
-            tl.style.visibility = 'visible';
+            tl.style.setProperty('display', 'grid', 'important');
+            tl.style.setProperty('visibility', 'visible', 'important');
         });
 
     timelines.forEach(timeline => {
@@ -780,10 +767,25 @@ function openPrayerModal(prayer) {
     document.body.style.overflow = 'hidden';
 }
 
+// Initialize page on load
+function initializePage() {
+    // Ensure home page is active by default
+    const homePage = document.querySelector('[data-page-content="home"]');
+    if (homePage && !homePage.classList.contains('active')) {
+        // Remove active from all pages
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        // Add active to home
+        homePage.classList.add('active');
+    }
+}
+
 // Load meetings on page load
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded 이벤트 발생');
     console.log('meetingsData 타입:', typeof meetingsData);
+
+    // Initialize page first
+    initializePage();
 
     // Ensure data is loaded before trying to display
     if (typeof meetingsData === 'undefined') {
