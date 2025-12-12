@@ -239,6 +239,18 @@ function displayMeetingsTimeline() {
             return;
         }
 
+        // FORCE timeline visibility
+        timelines.forEach(tl => {
+            tl.style.cssText = `
+                display: block !important;
+                visibility: visible !important;
+                min-height: 500px !important;
+                background: blue !important;
+                padding: 20px !important;
+                border: 5px solid green !important;
+            `;
+        });
+
     timelines.forEach(timeline => {
         timeline.innerHTML = '';
 
@@ -285,14 +297,22 @@ function displayMeetingsTimeline() {
 
             card.addEventListener('click', () => openMeetingModal(meeting));
 
-            // TEMPORARY: Remove all animations for debugging - show immediately
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
+            // FORCE VISIBILITY with inline styles
+            card.style.cssText = `
+                opacity: 1 !important;
+                display: block !important;
+                visibility: visible !important;
+                height: 250px !important;
+                min-height: 250px !important;
+                width: 100% !important;
+                background: red !important;
+                border: 10px solid yellow !important;
+                margin-bottom: 20px !important;
+                position: relative !important;
+                box-sizing: border-box !important;
+            `;
 
-            // DEBUGGING: Add visible red border
-            card.style.border = '3px solid red';
-
-            console.log(`카드 생성됨: ${meeting.date}, opacity: ${card.style.opacity}`);
+            console.log(`카드 생성됨: ${meeting.date}, height: ${card.style.height}`);
 
             // Add card to DOM
             timeline.appendChild(card);
