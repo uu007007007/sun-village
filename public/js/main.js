@@ -238,6 +238,18 @@ function displayMeetingsTimeline() {
             return;
         }
 
+        // CRITICAL: Hide all pages first, then show only home page
+        document.querySelectorAll('.page').forEach(page => {
+            page.style.display = 'none';
+        });
+
+        // Ensure home page is visible
+        const homePage = document.querySelector('[data-page-content="home"]');
+        if (homePage) {
+            homePage.classList.add('active');
+            homePage.style.display = 'block';
+        }
+
         // Force sections and containers visible (minimal fix)
         const meetingsSections = document.querySelectorAll('.meetings-section');
         meetingsSections.forEach(section => {
@@ -250,13 +262,6 @@ function displayMeetingsTimeline() {
             container.style.display = 'block';
             container.style.visibility = 'visible';
         });
-
-        // Ensure home page is visible
-        const homePage = document.querySelector('[data-page-content="home"]');
-        if (homePage) {
-            homePage.classList.add('active');
-            homePage.style.display = 'block';
-        }
 
         // Ensure timeline visibility
         timelines.forEach(tl => {
