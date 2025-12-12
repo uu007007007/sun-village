@@ -234,10 +234,36 @@ function displayMeetingsTimeline() {
         // Get all timeline elements (there might be multiple on different pages)
         const timelines = document.querySelectorAll('[id="meetingsTimeline"], [id="homeMeetingsTimeline"]');
         console.log('Timeline 요소 찾음:', timelines.length, '개');
+
         if (timelines.length === 0) {
             console.warn('Timeline 요소를 찾을 수 없습니다');
+            alert('⚠️ 타임라인 요소를 찾을 수 없습니다! DOM에 없습니다.');
             return;
         }
+
+        // Force all parent sections visible
+        const meetingsSections = document.querySelectorAll('.meetings-section');
+        meetingsSections.forEach(section => {
+            section.style.cssText = `
+                display: block !important;
+                visibility: visible !important;
+                background: lime !important;
+                border: 10px solid purple !important;
+                min-height: 300px !important;
+                padding: 30px !important;
+            `;
+        });
+
+        const containers = document.querySelectorAll('.meetings-section .container');
+        containers.forEach(container => {
+            container.style.cssText = `
+                display: block !important;
+                visibility: visible !important;
+                background: orange !important;
+                border: 5px solid brown !important;
+                padding: 20px !important;
+            `;
+        });
 
         // FORCE hide ALL pages first
         document.querySelectorAll('.page').forEach(page => {
@@ -363,15 +389,19 @@ function displayMeetingsTimeline() {
         });
     });
         const totalCards = document.querySelectorAll('.meeting-date-card').length;
-        const homePageVisible = homePage ? window.getComputedStyle(homePage).display : 'unknown';
-        const homePagePosition = homePage ? window.getComputedStyle(homePage).position : 'unknown';
-        const homePageZIndex = homePage ? window.getComputedStyle(homePage).zIndex : 'unknown';
+        const timelineCount = timelines.length;
 
         console.log('마을 모임 타임라인 표시 완료. 총 카드 수:', totalCards);
-        console.log('홈 페이지 - display:', homePageVisible, 'position:', homePagePosition, 'z-index:', homePageZIndex);
 
-        // DEBUGGING: Alert to confirm execution on mobile
-        alert(`마을 모임 카드 ${totalCards}개 생성 완료!\n홈페이지:\n- display: ${homePageVisible}\n- position: ${homePagePosition}\n- z-index: ${homePageZIndex}\n\n🔴 노란색 테스트 박스가 보이나요?`);
+        // Check if timelines are visible
+        let timelineInfo = '';
+        timelines.forEach((tl, idx) => {
+            const computed = window.getComputedStyle(tl);
+            timelineInfo += `\nTimeline ${idx + 1}: display=${computed.display}, height=${computed.height}`;
+        });
+
+        // DEBUGGING: Alert with detailed info
+        alert(`✅ 타임라인 ${timelineCount}개 찾음!\n✅ 카드 ${totalCards}개 생성!\n${timelineInfo}\n\n찾아보세요:\n🟢 연두색 섹션 (보라 테두리)\n🟠 오렌지 컨테이너 (갈색 테두리)\n🔵 파란 타임라인 (초록 테두리)\n🔴 빨강 카드 (노랑 테두리)`);
     } catch (error) {
         console.error('displayMeetingsTimeline 에러:', error);
         alert('에러 발생: ' + error.message);
