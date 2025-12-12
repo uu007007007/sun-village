@@ -237,23 +237,34 @@ function displayMeetingsTimeline() {
             return;
         }
 
-        // Force sections and containers visible with !important
+        // Force sections visible (same as v20 but without debug colors)
         const meetingsSections = document.querySelectorAll('.meetings-section');
         meetingsSections.forEach(section => {
-            section.style.setProperty('display', 'block', 'important');
-            section.style.setProperty('visibility', 'visible', 'important');
+            section.style.cssText = `
+                display: block !important;
+                visibility: visible !important;
+                min-height: 300px !important;
+                padding: 30px !important;
+            `;
         });
 
         const containers = document.querySelectorAll('.meetings-section .container');
         containers.forEach(container => {
-            container.style.setProperty('display', 'block', 'important');
-            container.style.setProperty('visibility', 'visible', 'important');
+            container.style.cssText = `
+                display: block !important;
+                visibility: visible !important;
+                padding: 20px !important;
+            `;
         });
 
-        // Ensure timeline visibility with !important
+        // Force timeline visibility (same as v20)
         timelines.forEach(tl => {
-            tl.style.setProperty('display', 'grid', 'important');
-            tl.style.setProperty('visibility', 'visible', 'important');
+            tl.style.cssText = `
+                display: grid !important;
+                visibility: visible !important;
+                min-height: 500px !important;
+                padding: 20px !important;
+            `;
         });
 
     timelines.forEach(timeline => {
@@ -302,17 +313,21 @@ function displayMeetingsTimeline() {
 
             card.addEventListener('click', () => openMeetingModal(meeting));
 
+            // Force card visibility (same as v20 but without debug colors)
+            card.style.cssText = `
+                opacity: 1 !important;
+                display: block !important;
+                visibility: visible !important;
+                height: 250px !important;
+                min-height: 250px !important;
+                width: 100% !important;
+                margin-bottom: 20px !important;
+                position: relative !important;
+                box-sizing: border-box !important;
+            `;
+
             // Add card to DOM
             timeline.appendChild(card);
-
-            // Smooth fade-in animation
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 30);
         });
     });
         console.log('마을 모임 타임라인 표시 완료');
