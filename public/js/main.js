@@ -239,16 +239,48 @@ function displayMeetingsTimeline() {
             return;
         }
 
-        // FORCE parent page visibility first
+        // FORCE hide ALL pages first
+        document.querySelectorAll('.page').forEach(page => {
+            page.style.display = 'none';
+        });
+
+        // FORCE parent page visibility
         const homePage = document.querySelector('[data-page-content="home"]');
         if (homePage) {
             homePage.style.cssText = `
                 display: block !important;
                 visibility: visible !important;
-                position: relative !important;
-                z-index: 1000 !important;
+                position: static !important;
+                top: 0 !important;
+                left: 0 !important;
+                transform: none !important;
+                z-index: 9999 !important;
+                opacity: 1 !important;
+                width: 100% !important;
+                height: auto !important;
+                overflow: visible !important;
+                background: pink !important;
             `;
-            console.log('홈 페이지 강제 표시');
+
+            // Add giant test text at the top
+            const testDiv = document.createElement('div');
+            testDiv.style.cssText = `
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                background: yellow !important;
+                color: black !important;
+                font-size: 50px !important;
+                font-weight: bold !important;
+                padding: 20px !important;
+                z-index: 99999 !important;
+                border: 10px solid red !important;
+            `;
+            testDiv.textContent = '🔴 테스트: 이 글자가 보이나요? 🔴';
+            document.body.insertBefore(testDiv, document.body.firstChild);
+
+            console.log('홈 페이지 강제 표시 + 테스트 텍스트 추가');
         }
 
         // FORCE timeline visibility
@@ -332,11 +364,14 @@ function displayMeetingsTimeline() {
     });
         const totalCards = document.querySelectorAll('.meeting-date-card').length;
         const homePageVisible = homePage ? window.getComputedStyle(homePage).display : 'unknown';
+        const homePagePosition = homePage ? window.getComputedStyle(homePage).position : 'unknown';
+        const homePageZIndex = homePage ? window.getComputedStyle(homePage).zIndex : 'unknown';
+
         console.log('마을 모임 타임라인 표시 완료. 총 카드 수:', totalCards);
-        console.log('홈 페이지 display:', homePageVisible);
+        console.log('홈 페이지 - display:', homePageVisible, 'position:', homePagePosition, 'z-index:', homePageZIndex);
 
         // DEBUGGING: Alert to confirm execution on mobile
-        alert(`마을 모임 카드 ${totalCards}개 생성 완료!\n홈페이지 display: ${homePageVisible}\n빨간/노란색으로 표시됩니다.`);
+        alert(`마을 모임 카드 ${totalCards}개 생성 완료!\n홈페이지:\n- display: ${homePageVisible}\n- position: ${homePagePosition}\n- z-index: ${homePageZIndex}\n\n🔴 노란색 테스트 박스가 보이나요?`);
     } catch (error) {
         console.error('displayMeetingsTimeline 에러:', error);
         alert('에러 발생: ' + error.message);
