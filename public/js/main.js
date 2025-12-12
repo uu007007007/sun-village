@@ -217,15 +217,12 @@ function loadMeetings() {
     try {
         if (typeof meetingsData !== 'undefined' && Array.isArray(meetingsData) && meetingsData.length > 0) {
             console.log('마을 모임 데이터 로드 성공:', meetingsData.length, '개의 모임');
-            alert(`데이터 로드 성공: ${meetingsData.length}개의 모임`);
             displayMeetingsTimeline();
         } else {
             console.error('마을 모임 데이터를 불러오는데 실패했습니다. meetingsData:', typeof meetingsData);
-            alert('데이터 로드 실패: meetingsData = ' + typeof meetingsData);
         }
     } catch (error) {
         console.error('loadMeetings 에러:', error);
-        alert('loadMeetings 에러: ' + error.message);
     }
 }
 
@@ -241,84 +238,30 @@ function displayMeetingsTimeline() {
             return;
         }
 
-        // Force all parent sections visible
+        // Force sections and containers visible (minimal fix)
         const meetingsSections = document.querySelectorAll('.meetings-section');
         meetingsSections.forEach(section => {
-            section.style.cssText = `
-                display: block !important;
-                visibility: visible !important;
-                background: lime !important;
-                border: 10px solid purple !important;
-                min-height: 300px !important;
-                padding: 30px !important;
-            `;
+            section.style.display = 'block';
+            section.style.visibility = 'visible';
         });
 
         const containers = document.querySelectorAll('.meetings-section .container');
         containers.forEach(container => {
-            container.style.cssText = `
-                display: block !important;
-                visibility: visible !important;
-                background: orange !important;
-                border: 5px solid brown !important;
-                padding: 20px !important;
-            `;
+            container.style.display = 'block';
+            container.style.visibility = 'visible';
         });
 
-        // FORCE hide ALL pages first
-        document.querySelectorAll('.page').forEach(page => {
-            page.style.display = 'none';
-        });
-
-        // FORCE parent page visibility
+        // Ensure home page is visible
         const homePage = document.querySelector('[data-page-content="home"]');
         if (homePage) {
-            homePage.style.cssText = `
-                display: block !important;
-                visibility: visible !important;
-                position: static !important;
-                top: 0 !important;
-                left: 0 !important;
-                transform: none !important;
-                z-index: 9999 !important;
-                opacity: 1 !important;
-                width: 100% !important;
-                height: auto !important;
-                overflow: visible !important;
-                background: pink !important;
-            `;
-
-            // Add giant test text at the top
-            const testDiv = document.createElement('div');
-            testDiv.style.cssText = `
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                width: 100% !important;
-                background: yellow !important;
-                color: black !important;
-                font-size: 50px !important;
-                font-weight: bold !important;
-                padding: 20px !important;
-                z-index: 99999 !important;
-                border: 10px solid red !important;
-            `;
-            testDiv.textContent = '🔴 테스트: 이 글자가 보이나요? 🔴';
-            document.body.insertBefore(testDiv, document.body.firstChild);
-
-            console.log('홈 페이지 강제 표시 + 테스트 텍스트 추가');
+            homePage.classList.add('active');
+            homePage.style.display = 'block';
         }
 
-        // FORCE timeline visibility
+        // Ensure timeline visibility
         timelines.forEach(tl => {
-            tl.style.cssText = `
-                display: block !important;
-                visibility: visible !important;
-                min-height: 500px !important;
-                background: blue !important;
-                padding: 20px !important;
-                border: 5px solid green !important;
-            `;
+            tl.style.display = 'grid';
+            tl.style.visibility = 'visible';
         });
 
     timelines.forEach(timeline => {
@@ -367,41 +310,20 @@ function displayMeetingsTimeline() {
 
             card.addEventListener('click', () => openMeetingModal(meeting));
 
-            // FORCE VISIBILITY with inline styles
-            card.style.cssText = `
-                opacity: 1 !important;
-                display: block !important;
-                visibility: visible !important;
-                height: 250px !important;
-                min-height: 250px !important;
-                width: 100% !important;
-                background: red !important;
-                border: 10px solid yellow !important;
-                margin-bottom: 20px !important;
-                position: relative !important;
-                box-sizing: border-box !important;
-            `;
-
-            console.log(`카드 생성됨: ${meeting.date}, height: ${card.style.height}`);
-
             // Add card to DOM
             timeline.appendChild(card);
+
+            // Smooth fade-in animation
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 30);
         });
     });
-        const totalCards = document.querySelectorAll('.meeting-date-card').length;
-        const timelineCount = timelines.length;
-
-        console.log('마을 모임 타임라인 표시 완료. 총 카드 수:', totalCards);
-
-        // Check if timelines are visible
-        let timelineInfo = '';
-        timelines.forEach((tl, idx) => {
-            const computed = window.getComputedStyle(tl);
-            timelineInfo += `\nTimeline ${idx + 1}: display=${computed.display}, height=${computed.height}`;
-        });
-
-        // DEBUGGING: Alert with detailed info
-        alert(`✅ 타임라인 ${timelineCount}개 찾음!\n✅ 카드 ${totalCards}개 생성!\n${timelineInfo}\n\n찾아보세요:\n🟢 연두색 섹션 (보라 테두리)\n🟠 오렌지 컨테이너 (갈색 테두리)\n🔵 파란 타임라인 (초록 테두리)\n🔴 빨강 카드 (노랑 테두리)`);
+        console.log('마을 모임 타임라인 표시 완료');
     } catch (error) {
         console.error('displayMeetingsTimeline 에러:', error);
         alert('에러 발생: ' + error.message);
