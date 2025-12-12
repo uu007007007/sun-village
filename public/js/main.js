@@ -239,6 +239,18 @@ function displayMeetingsTimeline() {
             return;
         }
 
+        // FORCE parent page visibility first
+        const homePage = document.querySelector('[data-page-content="home"]');
+        if (homePage) {
+            homePage.style.cssText = `
+                display: block !important;
+                visibility: visible !important;
+                position: relative !important;
+                z-index: 1000 !important;
+            `;
+            console.log('홈 페이지 강제 표시');
+        }
+
         // FORCE timeline visibility
         timelines.forEach(tl => {
             tl.style.cssText = `
@@ -319,10 +331,12 @@ function displayMeetingsTimeline() {
         });
     });
         const totalCards = document.querySelectorAll('.meeting-date-card').length;
+        const homePageVisible = homePage ? window.getComputedStyle(homePage).display : 'unknown';
         console.log('마을 모임 타임라인 표시 완료. 총 카드 수:', totalCards);
+        console.log('홈 페이지 display:', homePageVisible);
 
         // DEBUGGING: Alert to confirm execution on mobile
-        alert(`마을 모임 카드 ${totalCards}개 생성 완료! 빨간 테두리로 표시됩니다.`);
+        alert(`마을 모임 카드 ${totalCards}개 생성 완료!\n홈페이지 display: ${homePageVisible}\n빨간/노란색으로 표시됩니다.`);
     } catch (error) {
         console.error('displayMeetingsTimeline 에러:', error);
         alert('에러 발생: ' + error.message);
