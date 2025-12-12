@@ -217,12 +217,15 @@ function loadMeetings() {
     try {
         if (typeof meetingsData !== 'undefined' && Array.isArray(meetingsData) && meetingsData.length > 0) {
             console.log('마을 모임 데이터 로드 성공:', meetingsData.length, '개의 모임');
+            alert(`데이터 로드 성공: ${meetingsData.length}개의 모임`);
             displayMeetingsTimeline();
         } else {
             console.error('마을 모임 데이터를 불러오는데 실패했습니다. meetingsData:', typeof meetingsData);
+            alert('데이터 로드 실패: meetingsData = ' + typeof meetingsData);
         }
     } catch (error) {
         console.error('loadMeetings 에러:', error);
+        alert('loadMeetings 에러: ' + error.message);
     }
 }
 
@@ -282,50 +285,27 @@ function displayMeetingsTimeline() {
 
             card.addEventListener('click', () => openMeetingModal(meeting));
 
-            // Add card to DOM first
+            // TEMPORARY: Remove all animations for debugging - show immediately
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+
+            // DEBUGGING: Add visible red border
+            card.style.border = '3px solid red';
+
+            console.log(`카드 생성됨: ${meeting.date}, opacity: ${card.style.opacity}`);
+
+            // Add card to DOM
             timeline.appendChild(card);
-
-            // Staggered animation with fallback for mobile
-            try {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-
-                // Force reflow
-                card.offsetHeight;
-
-                // Use requestAnimationFrame for better mobile support
-                const animate = () => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                };
-
-                if (typeof requestAnimationFrame !== 'undefined') {
-                    requestAnimationFrame(() => requestAnimationFrame(animate));
-                } else {
-                    // Fallback for older browsers
-                    setTimeout(animate, 50);
-                }
-
-                // Safety fallback: ensure card is visible after 1 second
-                setTimeout(() => {
-                    if (card.style.opacity !== '1') {
-                        console.warn('애니메이션 실패, 강제로 카드 표시');
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }
-                }, 1000);
-            } catch (animError) {
-                // If animation fails, just show the card
-                console.error('애니메이션 에러:', animError);
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }
         });
     });
-        console.log('마을 모임 타임라인 표시 완료');
+        const totalCards = document.querySelectorAll('.meeting-date-card').length;
+        console.log('마을 모임 타임라인 표시 완료. 총 카드 수:', totalCards);
+
+        // DEBUGGING: Alert to confirm execution on mobile
+        alert(`마을 모임 카드 ${totalCards}개 생성 완료! 빨간 테두리로 표시됩니다.`);
     } catch (error) {
         console.error('displayMeetingsTimeline 에러:', error);
+        alert('에러 발생: ' + error.message);
     }
 }
 
